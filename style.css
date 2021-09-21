@@ -53,7 +53,6 @@ html{
 .daily-calendar{
     max-height: 67vh;
     overflow-y: scroll;
-    border: 1PX SOLID RED;
 }
 .calendar-block,.availability_page{
     min-height: 75vh;
@@ -62,7 +61,7 @@ html{
 }
 
 .daily-calendar::-webkit-scrollbar ,.availability_page::-webkit-scrollbar{
-    width: 5px;
+    width: 0px;
 }
 
 .daily-calendar::-webkit-scrollbar-track,.availability_page::-webkit-scrollbar-track {
@@ -81,6 +80,34 @@ html{
     border:1px solid  rgba(17,24,39,1);
     color: #fff;
 }
+.week-grid-top {
+    width: 11vw;
+
+}
 .week-grid {
-    width: 10vw;
+    width: 11vw;
+    min-height: 65px;
+    overflow-x: hidden;
+    z-index: 2;
+    cursor: pointer;
+    position: relative;
+}
+.week-meeting{
+
+    background: #EAF0FF;
+    border-left:4px solid #004BFF;
+    border-radius: 5px;
+}
+.week-meeting-top{
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    z-index: 1;
+}
+.week-meeting-end{
+    position: absolute;
+    bottom: 2px;
+    left: 5px;
+    z-index: 1;
+
 }

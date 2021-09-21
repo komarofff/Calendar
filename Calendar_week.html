@@ -11,33 +11,33 @@
     <div class="w-12/12 bg-white h-24"> header</div>
     <div class="w-12/12 bg-gray-2000 min-h-screen p-10">
         <div class="text-base mb-6 pb-4 border-b border-gray-300">
-            <span class="text-lg text-gray-300 pb-4 hover:text-red-400 border-b-2  border-gray-2000 hover:border-red-400 cursor-pointer mr-4 font-semibold">Availability range</span>
+            <span class="text-lg text-gray-300 pb-4 hover:text-red-400 border-b-2  border-gray-2000  hover:border-red-400 cursor-pointer mr-4 font-semibold">Availability range</span>
             <span class="text-lg active-tab-link pb-4 cursor-pointer font-semibold">Calendar</span>
         </div>
         <div id="calendar_page" class="flex justify-between nowrap w-full">
             <div class="w-2/12 mr-8 left-calendar bg-white rounded-lg p-4">
                 <img class="w-full" src="images/calendar_small.png" alt="">
             </div>
-            <div class="w-10/12 calendar-block bg-white rounded-xl py-4 px-2">
+            <div class="w-10/12 calendar-block bg-white rounded-xl py-4 pl-2">
                 <div class="mt-4 mx-auto w-full">
                     <div class="mb-3 ml-4 flex justify-start items-center calendar-week-dates">
                         <img class="cursor-pointer prev-week" src="images/arrow-left.svg" alt="arrow">
                         <span class="mx-8 text-lg text-black font-semibold">July 12 - 18, 2021</span>
                         <img class="cursor-pointer next-week" src="images/arrow-right.svg" alt="arrow">
                     </div>
-                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center   ">
-                        <p class="week-grid text-center bg-gray-2000 border border-gray-200 p-2  rounded-tl-xl">Monday,12</p>
-                        <p class="week-grid text-center bg-gray-2000 border border-gray-200 p-2 active-date-on-week">Tuesday, 13</p>
-                        <p class="week-grid text-center bg-gray-2000 border border-gray-200 p-2 ">Wednesday, 14</p>
-                        <p class="week-grid text-center bg-gray-2000 border border-gray-200  p-2 ">Thursday, 15</p>
-                        <p class="week-grid text-center bg-gray-2000 border border-gray-200 p-2 ">Friday, 16</p>
-                        <p class="week-grid text-center bg-gray-2000 border border-gray-200 p-2 ">Saturday, 17</p>
-                        <p class="week-grid text-center bg-gray-2000 border border-gray-200 p-2 rounded-tr-xl">Sunday, 18</p>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center  mr-4 ">
+                        <p class="week-grid-top text-center bg-gray-2000 border border-gray-200 p-2  rounded-tl-xl">Monday,12</p>
+                        <p class="week-grid-top text-center bg-gray-2000 border border-gray-200 p-2 active-date-on-week">Tuesday, 13</p>
+                        <p class="week-grid-top text-center bg-gray-2000 border border-gray-200 p-2 ">Wednesday, 14</p>
+                        <p class="week-grid-top text-center bg-gray-2000 border border-gray-200  p-2 ">Thursday, 15</p>
+                        <p class="week-grid-top text-center bg-gray-2000 border border-gray-200 p-2 ">Friday, 16</p>
+                        <p class="week-grid-top text-center bg-gray-2000 border border-gray-200 p-2 ">Saturday, 17</p>
+                        <p class="week-grid-top text-center bg-gray-2000 border border-gray-200 p-2 rounded-tr-xl">Sunday, 18</p>
 
                     </div>
                 </div>
-                <div class="daily-calendar w-full ">
-                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center ">
+                <div class="daily-calendar w-full pb-12">
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
                         <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
                         <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
                         <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
@@ -45,11 +45,277 @@
                         <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
                         <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
                         <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
-
+                        <div class="absolute -left-20 top-0 time"> 00:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 01:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">11:00-11:30 Daily Zoom</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 02:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  whitespace-nowrap "> </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">03:00-03:30 Daily Zoom</span>
+                            <span class="week-meeting week-meeting-end p-1 text-sm">03:30-04:00 Lunch</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 03:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-end p-1 text-sm">04:30-05:00 Lunch</span>
+                        </p>
+                        <div class="absolute -left-20 top-0 time"> 04:00</div>
                     </div>
 
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 00:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 01:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">11:00-11:30 Daily Zoom</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 02:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  whitespace-nowrap "> </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">03:00-03:30 Daily Zoom</span>
+                            <span class="week-meeting week-meeting-end p-1 text-sm">03:30-04:00 Lunch</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 03:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-end p-1 text-sm">04:30-05:00 Lunch</span>
+                        </p>
+                        <div class="absolute -left-20 top-0 time"> 04:00</div>
+                    </div>
 
-                </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 00:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 01:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">11:00-11:30 Daily Zoom</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 02:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  whitespace-nowrap "> </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">03:00-03:30 Daily Zoom</span>
+                            <span class="week-meeting week-meeting-end p-1 text-sm">03:30-04:00 Lunch</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 03:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-end p-1 text-sm">04:30-05:00 Lunch</span>
+                        </p>
+                        <div class="absolute -left-20 top-0 time"> 04:00</div>
+                    </div>
+
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 00:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 01:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">11:00-11:30 Daily Zoom</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 02:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  whitespace-nowrap "> </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">03:00-03:30 Daily Zoom</span>
+                            <span class="week-meeting week-meeting-end p-1 text-sm">03:30-04:00 Lunch</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 03:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-end p-1 text-sm">04:30-05:00 Lunch</span>
+                        </p>
+                        <div class="absolute -left-20 top-0 time"> 04:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 01:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">11:00-11:30 Daily Zoom</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 02:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  whitespace-nowrap "> </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">03:00-03:30 Daily Zoom</span>
+                            <span class="week-meeting week-meeting-end p-1 text-sm">03:30-04:00 Lunch</span>
+                        </p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <div class="absolute -left-20 top-0 time"> 03:00</div>
+                    </div>
+                    <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  "></p>
+                        <p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-end p-1 text-sm">04:30-05:00 Lunch</span>
+                        </p>
+                        <div class="absolute -left-20 top-0 time"> 24:00</div>
+                    </div>
+
             </div>
         </div>
         <div id="availability_page" class="hidden  w-12/12 availability_page bg-white rounded-xl py-4 px-2">
