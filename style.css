@@ -93,7 +93,7 @@ html{
     position: relative;
 }
 .week-meeting{
-
+    white-space: nowrap;
     background: #EAF0FF;
     border-left:4px solid #004BFF;
     border-radius: 5px;
