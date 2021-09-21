@@ -10,13 +10,22 @@
 <div class="app-block  box-border">
     <div class="w-12/12 bg-white h-24"> header</div>
     <div class="w-12/12 bg-gray-200 min-h-screen p-10">
-        <div class="text-base mb-6 pb-4 border-b border-gray-300"> tabs switchers</div>
-        <div class="flex justify-between nowrap w-full">
+        <div class="text-base mb-6 pb-4 border-b border-gray-300">
+        <span class="text-lg text-gray-300 pb-4 hover:text-red-400 border-b-2  border-gray-200 hover:border-red-400 cursor-pointer mr-4 font-semibold">Availability range</span>
+            <span class="text-lg active-tab-link pb-4 cursor-pointer font-semibold">Calendar</span>
+        </div>
+        <div id="calendar_page" class="hidden flex justify-between nowrap w-full">
             <div class="w-2/12 mr-8 left-calendar bg-white rounded-lg p-4">
                 <img class="w-full" src="images/calendar_small.png" alt="">
             </div>
             <div class="w-10/12 calendar-block bg-white rounded-xl py-4 px-2">
-                <div class="my-4 mx-auto w-full"> calendar header</div>
+                <div class="my-4 mx-auto w-full">
+                    <div class="ml-4 flex justify-start items-center ">
+                        <img src="images/arrow-left.svg" alt="arrow">
+                        <span class="mx-6 text-2xl text-black font-semibold">July 12 - 18, 2021</span>
+                        <img src="images/arrow-right.svg" alt="arrow">
+                    </div>
+                </div>
                 <div class="daily-calendar">
                     big calendar
                     <pre>
@@ -75,6 +84,9 @@
                     </pre>
                 </div>
             </div>
+        </div>
+        <div id="availability_page" class="w-12/12 availability_page bg-white rounded-xl py-4 px-2"> sdvdsvsdvdsv
+
         </div>
     </div>
 </div>

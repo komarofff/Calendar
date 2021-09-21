@@ -9,11 +9,29 @@ html{
     line-height: 130%;
     color: #2A3E4F;
 }
+.bg-gray-200{
+    background: #F4F8FB;
+}
+.border-gray-200{
+   border-color: #F4F8FB;
+}
 .lato{
     font-family: Lato;
 }
 .questrial{
     font-family: Questrial;
+}
+.big-text{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    color: #051B2E;
+}
+.active-tab-link{
+    color: #EE795C;
+    border-bottom: 2px solid #EE795C;
 }
 *{
     box-sizing: border-box;
@@ -23,27 +41,33 @@ html{
     padding:0;
 
 }
+.left-calendar{
+    max-height: 40vh;
+}
 .app-block{
     max-width: 100vw;
     max-height: 100vh;
     overflow: hidden;
 }
 .daily-calendar{
-    border: 1px solid red;
-
     max-height: 67vh;
     overflow-y: scroll;
 }
-.calendar-block{
+.calendar-block,.availability_page{
     min-height: 75vh;
     max-height: 75vh;
     overflow: hidden;
 }
-.daily-calendar::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 2px;
-    scrollbar-width: 2px;
-    /*IE10+*/
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    /*display: none;*/
+
+.daily-calendar::-webkit-scrollbar ,.availability_page::-webkit-scrollbar{
+    width: 5px;
+}
+
+.daily-calendar::-webkit-scrollbar-track,.availability_page::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.daily-calendar::-webkit-scrollbar-thumb,.availability_page::-webkit-scrollbar-thumb  {
+    background-color: #d9d7d7;
+    /*outline: 1px solid slategrey;*/
 }
