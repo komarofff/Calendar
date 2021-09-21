@@ -54,13 +54,34 @@ html{
     max-height: 67vh;
     overflow-y: scroll;
 }
+.modal-daily-calendar{
+    z-index:3;
+    position: absolute;
+    margin-top:40px;
+    left:44%;
+    width: 320px;
+    height:550px;
+    max-height: 520px;
+    overflow: hidden;
+    background: #fff;
+    padding: 24px;
+    overflow-y: scroll;
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    box-shadow: 0px 0px 50px rgba(15, 63, 35, 0.15);
+    border-radius: 8px;
+
+}
 .calendar-block,.availability_page{
     min-height: 75vh;
     max-height: 75vh;
     overflow: hidden;
 }
 
-.daily-calendar::-webkit-scrollbar ,.availability_page::-webkit-scrollbar{
+.daily-calendar::-webkit-scrollbar ,.availability_page::-webkit-scrollbar,.modal-daily-calendar::-webkit-scrollbar{
     width: 0px;
 }
 
@@ -89,10 +110,11 @@ html{
     min-height: 65px;
     overflow-x: hidden;
     z-index: 2;
-    cursor: pointer;
+
     position: relative;
 }
 .week-meeting{
+    cursor: pointer;
     white-space: nowrap;
     background: #EAF0FF;
     border-left:4px solid #004BFF;
@@ -110,4 +132,12 @@ html{
     left: 5px;
     z-index: 1;
 
+}
+.time{
+    left: -4vw;
+}
+@media(max-width: 1280px){
+    .time{
+        left: -5vw;
+    }
 }
