@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Questrial&display=swap');
-div{
-    border: 1px solid red;
-}
+
 html{
     font-family: Lato,Arial;
     font-style: normal;
@@ -31,8 +29,21 @@ html{
     overflow: hidden;
 }
 .daily-calendar{
-    min-height: 75vh;
+    border: 1px solid red;
+
+    max-height: 67vh;
+    overflow-y: scroll;
 }
-.left-calendar{
-    min-height: 30vh;
+.calendar-block{
+    min-height: 75vh;
+    max-height: 75vh;
+    overflow: hidden;
+}
+.daily-calendar::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 2px;
+    scrollbar-width: 2px;
+    /*IE10+*/
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    /*display: none;*/
 }
