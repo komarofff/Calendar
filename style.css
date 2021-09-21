@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Questrial&display=swap');
+div{
+    border: 1px solid red;
+}
+html{
+    font-family: Lato,Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 130%;
+    color: #2A3E4F;
+}
+.lato{
+    font-family: Lato;
+}
+.questrial{
+    font-family: Questrial;
+}
+*{
+    box-sizing: border-box;
+}
+*::before,*::after{
+    margin:0;
+    padding:0;
+
+}
+.app-block{
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+}
+.daily-calendar{
+    min-height: 75vh;
+}
+.left-calendar{
+    min-height: 30vh;
+}
