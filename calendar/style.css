@@ -93,11 +93,7 @@ html {
     overflow-y: scroll;
     height: 448px;
 }
-.inner-block-scroll{
-    overflow: hidden;
-    overflow-y: scroll;
-    height: 70vh;
-}
+
 .calendar-block, .availability_page {
     min-height: 75vh;
     max-height: 75vh;
@@ -168,7 +164,9 @@ html {
 }
 
 /*  MODAL week daily meeting */
+.modal-daily-calendar-inner {
 
+}
 
 .candidate-title {
     padding-left: 20px;
@@ -180,68 +178,54 @@ html {
     line-height: 130%;
     color: #051B2E;
 }
-/* ICONS  */
-.icon-date::before {
+
+.candidate-date::before {
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
+
     content: url("images/date.svg");
 }
 
-.icon-user::before {
+.candidate-user::before {
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
+
     content: url("images/user.svg");
 }
 
-.icon-time::before {
+.candidate-time::before {
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
+
     content: url("images/time.svg");
 }
 
-.icon-email::before {
-    margin-left: -20px;
+.candidate-email::before {
+    margin-left: -25px;
     margin-right: 10px;
     position: absolute;
+
     content: url("images/email.svg");
 }
 
-.icon-folder::before {
+.candidate-folder::before {
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
+
     content: url("images/folder.svg");
 }
 
-.icon-link::before {
+.candidate-link::before {
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
+
     content: url("images/link.svg");
 }
-.icon-view::before {
-    margin-left: -20px;
-    margin-right: 10px;
-    position: absolute;
-    content: url("images/view.svg");
-}
-.icon-trash::before {
-    margin-left: -20px;
-    margin-right: 10px;
-    position: absolute;
-    content: url("images/trash.svg");
-}
-.icon-edit::before {
-    margin-left: -20px;
-    margin-right: 10px;
-    position: absolute;
-    content: url("images/edit.svg");
-}
-
-/* ICONS END */
 
 .candidate-text {
     padding-left: 25px;
@@ -262,72 +246,7 @@ html {
     color: #004BFF;
     text-decoration: underline;
 }
-/* Range page */
-.range-block{
-    border-left: 16px solid #004BFF;
-}
-.range-block-disable{
-    border-left: 16px solid #C5CBD0;
 
-}
-.range-inner-block{
-    max-height: 225px;
-    height: 100%;
-}
-.range-switcher-on{
-    cursor: pointer;
-    position: relative;
-    width:   27px;
-    height:16px;
-    background: #29B537;
-    border-radius: 40px;
-}
-.range-switcher-off{
-    cursor: pointer;
-    width:   27px;
-    height:16px;
-    background: #C5CBD0;
-    border-radius: 40px;
-    position: relative;
-}
-.circle-in-switcher{
-    position: absolute;
-    top: 1px;
-    width:14px;
-    height:14px;
-    background: #fff;
-    border-radius: 50%;
-}
-.range-switcher-on > .circle-in-switcher{
-    right:0;
-}
-.range-switcher-off > .circle-in-switcher{
-    left:0;
-}
-.range-text{
-    font-family: Lato;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 130%;
-    color: #051B2E;
-}
-.range-text a{
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 130%;
-    color: #295D7B;
-}
-.text-delete{
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 130%;
-    color: #C20505;
-}
 @media (max-width: 1280px) {
     .time {
         left: -5vw;
