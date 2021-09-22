@@ -94,10 +94,11 @@
             </div>
         </div>
 
-        <div id="create_availability" class="hidden w-12/12 availability_page bg-white rounded-xl py-4 px-2">
-            <div class=" inner-block-scroll  overflow-y-scroll ">
-                <p>create</p>
-                
+        <div id="create_availability" class="hidden mx-auto w-12/12 availability_page bg-white rounded-xl p-4 ">
+            <div class=" w-full inner-block-scroll  overflow-y-scroll flex flex-nowrap">
+                <div class="w-6/12 border border-red-500 p-4">left</div>
+                <div class="w-6/12 border border-red-500 p-4">right</div>
+
 
             </div>
         </div>
@@ -109,6 +110,7 @@
 
 
 <script>
+    // on-off range cards
     const rangeSwitchers = document.querySelectorAll(".range-switcher")
             rangeSwitchers.forEach((val)=>{
                 val.addEventListener("click",(e)=>{
@@ -117,6 +119,8 @@
                     val.classList.toggle('range-switcher-off')
                 })
             })
+
+    // open create page
     document.querySelector('.create-av').addEventListener('click',(e)=>{
         document.getElementById('availability_page').classList.toggle('hidden')
         document.getElementById('create_availability').classList.toggle('hidden')
