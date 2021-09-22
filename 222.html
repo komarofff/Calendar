@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p:after {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+            content: '';
+            -webkit-mask: url(https://gist.githubusercontent.com/mmathys/fbbfbc171233a30e478ad5b87ec4f5d8/raw/cd9219e336b8f3b85579015bdce9665def091bb8/heart.svg) no-repeat 50% 50%;
+            mask: url(https://gist.githubusercontent.com/mmathys/fbbfbc171233a30e478ad5b87ec4f5d8/raw/cd9219e336b8f3b85579015bdce9665def091bb8/heart.svg) no-repeat 50% 50%;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+        }
+        .red:after {
+            background-color: red;
+        }
+        .green:after {
+            background-color: green;
+        }
+        .blue:after {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<p class="red">red heart</p>
+<p class="green">green heart</p>
+<p class="blue">blue heart</p>
+
+</body>
+</html>

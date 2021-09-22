@@ -10,6 +10,136 @@ html {
     color: #2A3E4F;
 }
 
+/*  BUTTON 1 */
+.button1 {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: #051B2E;
+    background: #F4F8FB;
+    border: 1px solid #F0F1F1;
+    padding: 9px 39px;
+    outline: none;
+
+}
+
+.button1:hover {
+    background: #2A3E4F;
+    border: 1px solid #F0F1F1;
+    color: #FFFFFF;
+}
+
+.button1:active {
+    background: #F4F8FB;
+    border: 1px solid #F0F1F1;
+    color: #EE795C;
+}
+
+/*  BUTTON 2 */
+.button2 {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: #fff;
+    background: #2A3E4F;
+    border-radius: 100px;
+    padding: 9px 50px;
+    outline: none;
+    border: none;
+}
+
+.button2:hover {
+    background: #295D7B;
+    box-shadow: 0px 4px 10px rgba(42, 62, 79, 0.4);
+    border-radius: 100px;
+}
+
+.button2_disabled {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: #fff;
+    background: #C5CBD0;
+    border-radius: 100px;
+    padding: 9px 80px;
+    outline: none;
+    border: none;
+    cursor: default;
+}
+/*  BUTTON 3 */
+.button3{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: #fff;
+    padding: 9px 32px;
+    outline: none;
+    border: none;
+    background: #C20505;
+    border-radius: 100px;
+}
+.button3:hover{
+    background: #E60000;
+    box-shadow: 0px 4px 10px rgba(141, 0, 0, 0.5);
+}
+.button3:active{
+    background: #8D0000;
+    box-shadow: none;
+}
+/*  BUTTON 4 */
+.button4{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: #2A3E4F;
+    padding: 9px 32px;
+    background: #fff;
+    border: 1px solid #2A3E4F;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+.button4:hover{
+    color: #BE563D;
+    border: 1px solid #BE563D;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(190, 86, 61, 0.2);
+    border-radius: 100px;
+}
+.button4:active{
+    background: #EE795C;
+    color: #fff;
+    box-shadow: none;
+    border: 1px solid #EE795C;
+}
+.button4_disabled{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    background: #fff;
+    padding: 9px 32px;
+    color: #C5CBD0;
+    border: 1px solid #C5CBD0;
+    border-radius: 100px;
+    cursor: default;
+}
 .bg-gray-2000 {
     background: #F4F8FB;
 }
@@ -104,7 +234,7 @@ html {
     overflow: hidden;
 }
 
-.daily-calendar::-webkit-scrollbar, .availability_page::-webkit-scrollbar, .modal-daily-calendar-inner::-webkit-scrollbar {
+.daily-calendar::-webkit-scrollbar, .availability_page::-webkit-scrollbar, .modal-daily-calendar-inner::-webkit-scrollbar ,.inner-block-scroll::-webkit-scrollbar{
     width: 0px;
 }
 
@@ -122,7 +252,7 @@ html {
 
 .active-date-on-week {
     background: rgba(17, 24, 39, 1);
-    border: 1px solid rgba(17, 24, 39, 1);
+
     color: #fff;
 }
 
@@ -181,64 +311,138 @@ html {
     color: #051B2E;
 }
 /* ICONS  */
-.icon-date::before {
+.icon-date::before{
+    width: 15px;
+    height: 15px;
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
-    content: url("images/date.svg");
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/date.svg") no-repeat 50% 50%;
+    mask: url("images/date.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #004BFF;
 }
 
 .icon-user::before {
+    width: 15px;
+    height: 15px;
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
-    content: url("images/user.svg");
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/user.svg") no-repeat 50% 50%;
+    mask: url("images/user.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #004BFF;
 }
 
 .icon-time::before {
+    width: 15px;
+    height: 15px;
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
-    content: url("images/time.svg");
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/time.svg") no-repeat 50% 50%;
+    mask: url("images/time.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #004BFF;
 }
 
 .icon-email::before {
+    width: 15px;
+    height: 15px;
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
-    content: url("images/email.svg");
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/email.svg") no-repeat 50% 50%;
+    mask: url("images/email.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #004BFF;
 }
 
 .icon-folder::before {
+    width: 15px;
+    height: 15px;
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
-    content: url("images/folder.svg");
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/folder.svg") no-repeat 50% 50%;
+    mask: url("images/folder.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #004BFF;
 }
 
 .icon-link::before {
+    width: 15px;
+    height: 15px;
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
-    content: url("images/link.svg");
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/link.svg") no-repeat 50% 50%;
+    mask: url("images/link.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #004BFF;
 }
-.icon-view::before {
+
+.icon-view::before{
+    width: 15px;
+    height: 15px;
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
-    content: url("images/view.svg");
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/view.svg") no-repeat 50% 50%;
+    mask: url("images/view.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #295D7B;
 }
+
 .icon-trash::before {
+    width: 15px;
+    height: 15px;
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
-    content: url("images/trash.svg");
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/trash.svg") no-repeat 50% 50%;
+    mask: url("images/trash.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #C20505;
 }
 .icon-edit::before {
+    width: 15px;
+    height: 15px;
     margin-left: -20px;
     margin-right: 10px;
     position: absolute;
-    content: url("images/edit.svg");
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/edit.svg") no-repeat 50% 50%;
+    mask: url("images/edit.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #051B2E;
 }
 
 /* ICONS END */
@@ -266,10 +470,10 @@ html {
 .range-block{
     border-left: 16px solid #004BFF;
 }
-.range-block-disable{
-    border-left: 16px solid #C5CBD0;
-
+.range-block:hover{
+    box-shadow: 5px 5px 20px rgba(42, 62, 79, 0.2);
 }
+
 .range-inner-block{
     max-height: 225px;
     height: 100%;
@@ -328,6 +532,35 @@ html {
     line-height: 130%;
     color: #C20505;
 }
+.text-edit{
+   color: #051B2E;
+}
+.range-disable a,.range-disable .text-delete,.range-disable .text-edit{
+    pointer-events: none;
+    color: #C5CBD0;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+.range-disable [class^="icon-"]::before{
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+   background: #ccc;
+}
+.range-disable{
+    border-left: 16px solid #C5CBD0;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
 @media (max-width: 1280px) {
     .time {
         left: -5vw;
