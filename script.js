@@ -76,11 +76,7 @@ meetings.forEach((val) => {
         let newModal = document.createElement('div')
         newModal.classList.add('modal-daily-calendar')
         newModal.innerHTML = modal
-
-
-        let valPositionLeft =  val.getBoundingClientRect().left
         let valPositionRight =  val.getBoundingClientRect().right
-
         val.classList.add('selected-week-meeting')
         val.parentNode.after(newModal)
         let modalWidth = newModal.getBoundingClientRect().width
@@ -88,8 +84,7 @@ meetings.forEach((val) => {
         if(difference<modalWidth){
             val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `left:-${modalWidth }px`
         }
-       // console.log('schitaem = '+(userScreen-valPositionRight)+'| modalWidth = '+modalWidth +' | userScreen='+userScreen + " | valPositionLeft="+ valPositionLeft + " |valPositionRight = "+valPositionRight )
-        closeModal(val)
+         closeModal(val)
 
     })
 
