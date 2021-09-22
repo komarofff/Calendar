@@ -70,9 +70,11 @@ let modal = `
                                    
 `
 let position = 20
+let counter =0
 const meetings = document.querySelectorAll(".week-meeting")
 meetings.forEach((val) => {
     val.addEventListener("click", (e) => {
+        counter++
         position +=20
         // document.querySelector('.modal-daily-calendar').classList.remove('hidden')
         let newModal = document.createElement('div')
@@ -89,6 +91,8 @@ function closeModal() {
     modalList.forEach((value) => {
         value.querySelector('.close-modal-daily-calendar').addEventListener('click', (e) => {
             e.target.parentNode.parentNode.remove()
+            counter--
+            if(counter<=0){position=20 ; counter =0 }
         })
     })
 
