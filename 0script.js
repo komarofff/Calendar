@@ -69,30 +69,30 @@ let modal = `
                                         </div>
                                    
 `
+let position = 20
+let counter =0
 const meetings = document.querySelectorAll(".week-meeting")
 meetings.forEach((val) => {
     val.addEventListener("click", (e) => {
-
+        counter++
+        position +=20
         // document.querySelector('.modal-daily-calendar').classList.remove('hidden')
         let newModal = document.createElement('div')
         newModal.classList.add('modal-daily-calendar')
-
+        newModal.style.cssText = `margin-top: ${position}px; margin-left: ${position}px`
         newModal.innerHTML = modal
-        val.classList.add('selected-week-meeting')
-        val.parentNode.after(newModal)
-
-        closeModal(val)
+        document.querySelector('.header-of-calendar').append(newModal)
+        closeModal()
     })
 
 })
-function closeModal(valTarger) {
+function closeModal() {
     const modalList = document.querySelectorAll('.modal-daily-calendar')
     modalList.forEach((value) => {
         value.querySelector('.close-modal-daily-calendar').addEventListener('click', (e) => {
             e.target.parentNode.parentNode.remove()
-            valTarger.classList.remove('selected-week-meeting')
-            
-
+            counter--
+            if(counter<=0){position=20 ; counter =0 }
         })
     })
 
