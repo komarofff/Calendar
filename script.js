@@ -69,19 +69,28 @@ let modal = `
                                         </div>
                                    
 `
+let userScreen = document.documentElement.clientWidth
 const meetings = document.querySelectorAll(".week-meeting")
 meetings.forEach((val) => {
     val.addEventListener("click", (e) => {
-
-        // document.querySelector('.modal-daily-calendar').classList.remove('hidden')
         let newModal = document.createElement('div')
         newModal.classList.add('modal-daily-calendar')
-
         newModal.innerHTML = modal
+
+
+        let valPositionLeft =  val.getBoundingClientRect().left
+        let valPositionRight =  val.getBoundingClientRect().right
+
         val.classList.add('selected-week-meeting')
         val.parentNode.after(newModal)
-
+        let modalWidth = newModal.getBoundingClientRect().width
+        let difference = userScreen-valPositionRight
+        if(difference<modalWidth){
+            val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `left:-${modalWidth }px`
+        }
+       // console.log('schitaem = '+(userScreen-valPositionRight)+'| modalWidth = '+modalWidth +' | userScreen='+userScreen + " | valPositionLeft="+ valPositionLeft + " |valPositionRight = "+valPositionRight )
         closeModal(val)
+
     })
 
 })
@@ -91,7 +100,7 @@ function closeModal(valTarger) {
         value.querySelector('.close-modal-daily-calendar').addEventListener('click', (e) => {
             e.target.parentNode.parentNode.remove()
             valTarger.classList.remove('selected-week-meeting')
-            
+
 
         })
     })
