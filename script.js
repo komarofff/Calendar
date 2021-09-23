@@ -76,7 +76,6 @@ meetings.forEach((val) => {
         let newModal = document.createElement('div')
         newModal.classList.add('modal-daily-calendar')
         newModal.draggable = true
-
         newModal.innerHTML = modal
         let valPositionRight = val.getBoundingClientRect().right
         val.classList.add('selected-week-meeting')
@@ -91,13 +90,14 @@ meetings.forEach((val) => {
     })
 
 })
-
+////добавить ID самого события в календаре для удаления активного класса при закрытии popup
 function closeModal(valTarger) {
     const modalList = document.querySelectorAll('.modal-daily-calendar')
     modalList.forEach((value) => {
         let popup = value.querySelector('.close-modal-daily-calendar')
         popup.addEventListener('click', (e) => {
-            e.target.parentNode.parentNode.remove()
+            //e.target.parentNode.parentNode.remove()
+            value.remove()
             valTarger.classList.remove('selected-week-meeting')
         })
 ////////////////////////////////////////////////////////////////////////
