@@ -302,7 +302,9 @@ html {
     left: 5px;
     z-index: 1;
 }
-
+.close-modal-daily-calendar{
+    z-index:1050;
+}
 .week-meeting-end {
     position: absolute;
     bottom: 2px;

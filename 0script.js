@@ -78,32 +78,33 @@ meetings.forEach((val) => {
         newModal.draggable = true
 
         newModal.innerHTML = modal
-        let valPositionRight = val.getBoundingClientRect().right
+        let valPositionRight =  val.getBoundingClientRect().right
         val.classList.add('selected-week-meeting')
         val.parentNode.after(newModal)
         let modalWidth = newModal.getBoundingClientRect().width
-        let difference = userScreen - valPositionRight
-        if (difference < modalWidth) {
-            val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `left:-${modalWidth}px`
+        let difference = userScreen-valPositionRight
+        if(difference<modalWidth){
+            val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `left:-${modalWidth }px`
         }
-        closeModal(val)
+         closeModal(val)
 
     })
 
 })
-
 function closeModal(valTarger) {
     const modalList = document.querySelectorAll('.modal-daily-calendar')
     modalList.forEach((value) => {
-        let popup = value.querySelector('.close-modal-daily-calendar')
-        popup.addEventListener('click', (e) => {
-            e.target.parentNode.parentNode.remove()
+        value.querySelector('.close-modal-daily-calendar').addEventListener('click', (e) => {
+            // e.target.parentNode.parentNode.remove()
+            value.remove()
             valTarger.classList.remove('selected-week-meeting')
+            console.log(valTarger)
         })
 ////////////////////////////////////////////////////////////////////////
-        value.querySelector('.modal-daily-calendar-inner').onmousedown = function (event) { // (1) отследить нажатие
+        value.onmousedown = function(event) { // (1) отследить нажатие
 
-            value.ondragstart = function () {
+
+            value.ondragstart = function() {
                 return false;
             };
             // (2) подготовить к перемещению:
@@ -131,7 +132,7 @@ function closeModal(valTarger) {
             document.addEventListener('mousemove', onMouseMove);
 
             // (4) положить мяч, удалить более ненужные обработчики событий
-            value.onmouseup = function () {
+            value.onmouseup = function() {
                 document.removeEventListener('mousemove', onMouseMove);
                 value.onmouseup = null;
             };
@@ -141,3 +142,6 @@ function closeModal(valTarger) {
     })
 
 }
+// document.querySelector('.close-modal-daily-calendar').addEventListener('click', () => {
+//     document.querySelector('.modal-daily-calendar').classList.add('hidden')
+// })
