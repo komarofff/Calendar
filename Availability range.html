@@ -102,11 +102,12 @@
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-center justify-start relative">
                             <img class="mr-3" src="images/star.svg" alt="star">
-                            <input class=" form-input  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white" type="text"
+                            <input class=" form-input  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
+                                   type="text"
                                    value="" placeholder="Availability name*">
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Availability name*</span>
                         </p>
-                        <p class="ml-24 w-8/12 text-base text-black opacity-30">
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
                             Enter a name for your event. The circled text in the screen shot below is the event name.
                         </p>
                     </div>
@@ -114,11 +115,12 @@
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-center justify-start  relative">
                             <img class="mr-3" src="images/phone.svg" alt="star">
-                            <input class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white" type="text"
+                            <input class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
+                                   type="text"
                                    value="" placeholder="Position">
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Position</span>
                         </p>
-                        <p class="ml-24 w-8/12 text-base text-black opacity-30">
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
                             Use the "Location" field to specify how and where both parties will connect at the scheduled
                             time.
                             The location entered here will appear on the confirmation page after events are scheduled
@@ -128,11 +130,12 @@
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-center justify-start relative">
                             <img class="mr-3" src="images/external-link.svg" alt="star">
-                            <input class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white" type="text"
+                            <input class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
+                                   type="text"
                                    value="" placeholder="Location">
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Location</span>
                         </p>
-                        <p class="ml-24 w-8/12 text-base text-black opacity-30">
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
                             Event URL is the link you can share with your invitees if you want them to bypass the "Pick
                             Event" step on your Calendly page and go directly to the "Pick Date & Time" step.
                         </p>
@@ -140,23 +143,26 @@
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-center justify-start relative">
                             <img class="mr-3" src="images/link-link.svg" alt="star">
-                            <input class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white" type="text"
+                            <input id="event-link"
+                                   class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
+                                   type="text"
                                    value="" placeholder="Event link*">
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Event link*</span>
                         </p>
-                        <p class="ml-24 w-8/12 text-base text-black opacity-30">
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
                             Use this optional field to provide a description of your event.<br>
-                            www.meettribe.com/event/
+                            <a class="event-link text-red-500" href="http://www.meettribe.com/event/">www.meettribe.com/event/</a>
                         </p>
                     </div>
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-start justify-start relative">
                             <img class="mr-3" src="images/file-text.svg" alt="star">
-                            <textarea class=" form-input w-full h-36 focus:outline-none focus:border-black p-2 rounded-lg border border-gray-200  focus:placeholder-white"
-                                      value="" placeholder="Description/instractions"></textarea>
+                            <textarea
+                                    class=" form-input w-full h-36 focus:outline-none focus:border-black p-2 rounded-lg border border-gray-200  focus:placeholder-white"
+                                    value="" placeholder="Description/instractions"></textarea>
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Description/instractions</span>
                         </p>
-                        <p class="ml-24 w-8/12 text-base text-black opacity-30">
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
 
                         </p>
                     </div>
@@ -188,16 +194,29 @@
 
     // on-off labels for forms
     const formInput = document.querySelectorAll('.form-input')
-    formInput.forEach((inputVal)=>{
-        inputVal.addEventListener('focus',()=>{
+    formInput.forEach((inputVal) => {
+        inputVal.addEventListener('focus', () => {
             inputVal.parentNode.querySelector('.label-text').classList.remove('hidden')
+            inputVal.parentNode.parentNode.querySelector('.right-text').classList.remove('opacity-30')
+            console.log(inputVal.parentNode.parentNode)
         })
-        inputVal.addEventListener('blur',()=>{
-            if(inputVal.value==='') {
+        inputVal.addEventListener('blur', () => {
+            if (inputVal.value === '') {
                 inputVal.parentNode.querySelector('.label-text').classList.add('hidden')
             }
+            inputVal.parentNode.parentNode.querySelector('.right-text').classList.add('opacity-30')
         })
 
+    })
+    // data from input to link
+    let eventLink = document.getElementById('event-link')
+    let changeLink = document.querySelector('.event-link')
+    let href = changeLink.href
+    let linkText = changeLink.innerHTML
+    eventLink.addEventListener('input', (e) => {
+        let valueInput = eventLink.value
+        changeLink.href = href + valueInput
+        changeLink.innerHTML = linkText + valueInput
     })
 </script>
 </body>
