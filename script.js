@@ -101,43 +101,26 @@ function closeModal(valTarger) {
             valTarger.classList.remove('selected-week-meeting')
         })
 ////////////////////////////////////////////////////////////////////////
-        value.querySelector('.modal-daily-calendar-inner').onmousedown = function (event) { // (1) отследить нажатие
-
+        value.querySelector('.modal-daily-calendar-inner').onmousedown = function (event) {
             value.ondragstart = function () {
                 return false;
-            };
-            // (2) подготовить к перемещению:
-            // разместить поверх остального содержимого и в абсолютных координатах
-            value.style.position = 'fixed';
-            value.style.zIndex = 1000;
-            // переместим в body, чтобы мяч был точно не внутри position:relative
-            document.body.append(value);
-            // и установим абсолютно спозиционированный мяч под курсор
-
-            moveAt(event.pageX, event.pageY);
-
-            // передвинуть мяч под координаты курсора
-            // и сдвинуть на половину ширины/высоты для центрирования
+            }
+            value.style.position = 'fixed'
+            value.style.zIndex = 1000
+            document.body.append(value)
+            moveAt(event.pageX, event.pageY)
             function moveAt(pageX, pageY) {
-                value.style.left = pageX - value.offsetWidth / 2 + 'px';
-                value.style.top = pageY - value.offsetHeight / 2 + 'px';
+                value.style.left = pageX - value.offsetWidth / 2 + 'px'
+                value.style.top = pageY - value.offsetHeight / 2 + 'px'
             }
-
             function onMouseMove(event) {
-                moveAt(event.pageX, event.pageY);
+                moveAt(event.pageX, event.pageY)
             }
-
-            // (3) перемещать по экрану
-            document.addEventListener('mousemove', onMouseMove);
-
-            // (4) положить мяч, удалить более ненужные обработчики событий
+            document.addEventListener('mousemove', onMouseMove)
             value.onmouseup = function () {
-                document.removeEventListener('mousemove', onMouseMove);
-                value.onmouseup = null;
-            };
-
-        };
-
+                document.removeEventListener('mousemove', onMouseMove)
+                value.onmouseup = null
+            }
+        }
     })
-
 }
