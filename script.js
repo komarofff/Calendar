@@ -74,23 +74,26 @@ let userScreen = document.documentElement.clientWidth
 const meetings = document.querySelectorAll(".week-meeting")
 meetings.forEach((val) => {
     val.addEventListener("click", (e) => {
-        let newModal = document.createElement('div')
-        newModal.classList.add('modal-daily-calendar')
-        newModal.draggable = true
-        let meetingID = `meeting-${countEr}`
-        countEr++
-        val.id = meetingID
-        newModal.setAttribute('data-index', meetingID)
-        newModal.innerHTML = modal
-        let valPositionRight = val.getBoundingClientRect().right
-        val.classList.add('selected-week-meeting')
-        val.parentNode.after(newModal)
-        let modalWidth = newModal.getBoundingClientRect().width
-        let difference = userScreen - valPositionRight
-        if (difference < modalWidth) {
-            val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `left:-${modalWidth}px`
+     let contains = val.classList.contains('selected-week-meeting')
+        if(contains===false) {
+            let newModal = document.createElement('div')
+            newModal.classList.add('modal-daily-calendar')
+            newModal.draggable = true
+            let meetingID = `meeting-${countEr}`
+            countEr++
+            val.id = meetingID
+            newModal.setAttribute('data-index', meetingID)
+            newModal.innerHTML = modal
+            let valPositionRight = val.getBoundingClientRect().right
+            val.classList.add('selected-week-meeting')
+            val.parentNode.after(newModal)
+            let modalWidth = newModal.getBoundingClientRect().width
+            let difference = userScreen - valPositionRight
+            if (difference < modalWidth) {
+                val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `left:-${modalWidth}px`
+            }
+            closeModal(val)
         }
-        closeModal(val)
 
     })
 
