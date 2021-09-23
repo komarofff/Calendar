@@ -14,7 +14,6 @@
             <span class="text-lg  pb-4   cursor-pointer mr-4 font-semibold active-tab-link">Availability range</span>
             <span class="text-lg text-gray-300 pb-4 hover:text-red-400 cursor-pointer font-semibold border-b-2  border-gray-2000  hover:border-red-400">Calendar</span>
         </div>
-
         <div id="availability_page" class="  w-12/12 availability_page   px-2 ">
             <div class="my-4 w-full flex justify-end">
                 <button class="button2 create-av">Create availability</button>
@@ -90,38 +89,84 @@
                 </div>
 
 
-
             </div>
         </div>
 
         <div id="create_availability" class="hidden mx-auto w-12/12 availability_page bg-white rounded-xl p-4 ">
-            <div class=" w-full inner-block-scroll  overflow-y-scroll flex flex-nowrap">
-                <div class="w-6/12 border border-red-500 p-4">left</div>
-                <div class="w-6/12 border border-red-500 p-4">right</div>
+            <div class=" w-full ">
+                <div class="mb-4 flex flex-nowrap flex items-center justify-start">
+                    <p class="text-lg font-semibold">Create availability</p>
+                </div>
+                <div class="w-full inner-block-scroll  overflow-y-scroll flex flex-col  flex items-start justify-start">
+
+                    <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
+                        <p class="w-4/12  flex items-center justify-start">
+                            <img class="mr-3" src="images/star.svg" alt="star">
+                            <input class="w-full focus:outline-none p-2 rounded-lg border border-gray-200" type="text"
+                                   value="" placeholder="Availability name*">
+                        </p>
+                        <p class="ml-24 w-8/12 text-base text-gray-400">
+                            Enter a name for your event. The circled text in the screen shot below is the event name.
+                        </p>
+                    </div>
+
+                    <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
+                        <p class="w-4/12  flex items-center justify-start">
+                            <img class="mr-3" src="images/phone.svg" alt="star">
+                            <input class="w-full focus:outline-none p-2 rounded-lg border border-gray-200" type="text"
+                                   value="" placeholder="Position">
+                        </p>
+                        <p class="ml-24 w-8/12 text-base text-gray-400">
+                            Use the "Location" field to specify how and where both parties will connect at the scheduled
+                            time.
+                            The location entered here will appear on the confirmation page after events are scheduled
+                            and in the calendar event added to both you and your invitee's calendars.
+                        </p>
+                    </div>
+                    <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
+                        <p class="w-4/12  flex items-center justify-start">
+                            <img class="mr-3" src="images/external-link.svg" alt="star">
+                            <input class="w-full focus:outline-none p-2 rounded-lg border border-gray-200" type="text"
+                                   value="" placeholder="Location">
+                        </p>
+                        <p class="ml-24 w-8/12 text-base text-gray-400">
+                            Event URL is the link you can share with your invitees if you want them to bypass the "Pick
+                            Event" step on your Calendly page and go directly to the "Pick Date & Time" step.
+                        </p>
+                    </div>
+                    <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
+                        <p class="w-4/12  flex items-center justify-start">
+                            <img class="mr-3" src="images/file-text.svg" alt="star">
+                            <input class="w-full focus:outline-none p-2 rounded-lg border border-gray-200" type="text"
+                                   value="" placeholder="Event link*">
+                        </p>
+                        <p class="ml-24 w-8/12 text-base text-gray-400">
+                            Use this optional field to provide a description of your event.<br>
+                            www.meettribe.com/event/
+                        </p>
+                    </div>
 
 
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-
-
-
 <script>
     // on-off range cards
     const rangeSwitchers = document.querySelectorAll(".range-switcher")
-            rangeSwitchers.forEach((val)=>{
-                val.addEventListener("click",(e)=>{
-                    e.target.parentNode.parentNode.classList.toggle('range-disable')
-                   val.classList.toggle('range-switcher-on')
-                    val.classList.toggle('range-switcher-off')
-                })
-            })
+    rangeSwitchers.forEach((val) => {
+        val.addEventListener("click", (e) => {
+            e.target.parentNode.parentNode.classList.toggle('range-disable')
+            val.classList.toggle('range-switcher-on')
+            val.classList.toggle('range-switcher-off')
+        })
+    })
 
     // open create page
-    document.querySelector('.create-av').addEventListener('click',(e)=>{
+    document.querySelector('.create-av').addEventListener('click', (e) => {
         document.getElementById('availability_page').classList.toggle('hidden')
         document.getElementById('create_availability').classList.toggle('hidden')
     })
