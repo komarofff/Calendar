@@ -251,6 +251,23 @@
 
 
 <script>
+    // open create page
+    document.querySelector('.create-av').addEventListener('click', (e) => {
+        document.getElementById('availability_page').classList.toggle('hidden')
+        document.getElementById('create_availability').classList.toggle('hidden')
+    })
+
+    //close create page
+    const closeButtons = document.querySelectorAll('.close-create')
+    closeButtons.forEach((el)=>{
+        el.addEventListener('click',()=>{
+            document.getElementById('availability_page').classList.remove('hidden')
+            document.getElementById('create_availability').classList.add('hidden')
+            document.getElementById('step-2').classList.add('hidden')
+            document.getElementById('step-3').classList.add('hidden')
+        })
+    })
+
     //go to step 2
     document.querySelector('.go-to-step-2').addEventListener('click',()=>{
         document.getElementById('create_availability').classList.toggle('hidden')
@@ -273,20 +290,6 @@
         })
     })
 
-    // open create page
-    document.querySelector('.create-av').addEventListener('click', (e) => {
-        document.getElementById('availability_page').classList.toggle('hidden')
-        document.getElementById('create_availability').classList.toggle('hidden')
-    })
-
-    //close create page
-    const closeButtons = document.querySelectorAll('.close-create')
-    closeButtons.forEach((el)=>{
-        el.addEventListener('click',()=>{
-            document.getElementById('availability_page').classList.toggle('hidden')
-            document.getElementById('create_availability').classList.toggle('hidden')
-        })
-    })
 
     // on-off labels for forms
     const formInput = document.querySelectorAll('.form-input')
