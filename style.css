@@ -580,6 +580,9 @@ html {
     -o-transition: all .1s linear;
     transition: all .1s linear;
 }
+option:disabled{
+    color: rgba(229, 231, 235, 0.6)
+}
 
 @media (max-width: 1280px) {
     .time {

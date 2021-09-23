@@ -12,7 +12,7 @@
     <div class="w-12/12 bg-gray-2000 min-h-screen p-4 lg:p-6 xl:p-10">
         <div class="text-base mb-6 pb-4 border-b border-gray-300">
             <span class="text-lg  pb-4   cursor-pointer mr-4 font-semibold active-tab-link">Availability range</span>
-            <span class="text-lg text-gray-300 pb-4 hover:text-red-400 cursor-pointer font-semibold border-b-2  border-gray-2000  hover:border-red-400">Calendar</span>
+            <a href="Calendar_week.html" class="text-lg text-gray-300 pb-4 hover:text-red-400 cursor-pointer font-semibold border-b-2  border-gray-2000  hover:border-red-400">Calendar</a>
         </div>
         <div id="availability_page" class="  w-12/12 availability_page   px-2 ">
             <div class="my-4 w-full flex justify-end">
@@ -115,9 +115,12 @@
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-center justify-start  relative">
                             <img class="mr-3" src="images/phone.svg" alt="star">
-                            <input class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
-                                   type="text"
-                                   value="" placeholder="Position">
+                            <select class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-gray-400 ">
+                                <option value="" disabled selected>Position</option>
+                                <option value="Position 2">Position 2</option>
+                                <option value="Position 3">Position 3</option>
+                                <option value="Position 4">Position 4</option>
+                            </select>
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Position</span>
                         </p>
                         <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
@@ -130,9 +133,12 @@
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-center justify-start relative">
                             <img class="mr-3" src="images/external-link.svg" alt="star">
-                            <input class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
-                                   type="text"
-                                   value="" placeholder="Location">
+                            <select class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-gray-400">
+                                <option value="" disabled selected>Location</option>
+                                <option value="Location 2">Location 2</option>
+                                <option value="Location 3">Location 3</option>
+                                <option value="Location 4">Location 4</option>
+                            </select>
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Location</span>
                         </p>
                         <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
@@ -162,20 +168,101 @@
                                     value="" placeholder="Description/instractions"></textarea>
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Description/instractions</span>
                         </p>
-                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
-
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text"></p>
+                    </div>
+                    <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
+                        <p class="w-4/12  flex items-center justify-end relative">
+                            <button class=" mr-6 hover:text-red-500 close-create">Cancel</button>
+                            <button class="button2 go-to-step-2">Continue</button>
                         </p>
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text"></p>
                     </div>
 
 
                 </div>
             </div>
         </div>
+
+        <div id="step-2" class="hidden mx-auto w-12/12 availability_page bg-white rounded-xl p-4 ">
+            <div class=" w-full ">
+                <div class="mb-4 flex flex-nowrap flex items-center justify-start">
+                    <p class="text-lg font-semibold">Create availability</p>
+                </div>
+                <div class="w-full inner-block-scroll  overflow-y-scroll flex flex-col  flex items-start justify-start">
+                    <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
+                        <p class="w-4/12  flex items-center justify-start relative">
+                            <img class="mr-3" src="images/star.svg" alt="star">
+                            <input class=" form-input  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
+                                   type="text"
+                                   value="" placeholder="Availability name*">
+                            <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Availability name*</span>
+                        </p>
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
+                            Enter a name for your event. The circled text in the screen shot below is the event name.
+                        </p>
+                    </div>
+
+
+                    <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
+                        <p class="w-4/12  flex items-center justify-end relative">
+                            <button class=" mr-6 hover:text-red-500 close-create">Cancel</button>
+                            <button class="button2 go-to-step-3">Continue</button>
+                        </p>
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="step-3" class="hidden mx-auto w-12/12 availability_page bg-white rounded-xl p-4 ">
+            <div class=" w-full ">
+                <div class="mb-4 flex flex-nowrap flex items-center justify-start">
+                    <p class="text-lg font-semibold">Create availability</p>
+                </div>
+                <div class="w-full inner-block-scroll  overflow-y-scroll flex flex-col  flex items-start justify-start">
+
+                    <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
+                        <p class="w-4/12  flex items-center justify-start relative">
+                            <img class="mr-3" src="images/star.svg" alt="star">
+                            <input class=" form-input  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
+                                   type="text"
+                                   value="" placeholder="Availability name*">
+                            <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Availability name*</span>
+                        </p>
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
+                            Enter a name for your event. The circled text in the screen shot below is the event name.
+                        </p>
+                    </div>
+
+
+                    <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
+                        <p class="w-4/12  flex items-center justify-end relative">
+                            <button class=" mr-6 hover:text-red-500 close-create">Cancel</button>
+                            <button class="button2 go-to-step-4">Continue</button>
+                        </p>
+                        <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
 
 <script>
+    //go to step 2
+    document.querySelector('.go-to-step-2').addEventListener('click',()=>{
+        document.getElementById('create_availability').classList.toggle('hidden')
+        document.getElementById('step-2').classList.toggle('hidden')
+    })
+    //go to step 3
+    document.querySelector('.go-to-step-3').addEventListener('click',()=>{
+        document.getElementById('step-2').classList.toggle('hidden')
+        document.getElementById('step-3').classList.toggle('hidden')
+    })
+
+
     // on-off range cards
     const rangeSwitchers = document.querySelectorAll(".range-switcher")
     rangeSwitchers.forEach((val) => {
@@ -190,6 +277,15 @@
     document.querySelector('.create-av').addEventListener('click', (e) => {
         document.getElementById('availability_page').classList.toggle('hidden')
         document.getElementById('create_availability').classList.toggle('hidden')
+    })
+
+    //close create page
+    const closeButtons = document.querySelectorAll('.close-create')
+    closeButtons.forEach((el)=>{
+        el.addEventListener('click',()=>{
+            document.getElementById('availability_page').classList.toggle('hidden')
+            document.getElementById('create_availability').classList.toggle('hidden')
+        })
     })
 
     // on-off labels for forms
