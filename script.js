@@ -69,6 +69,7 @@ let modal = `
                                         </div>
                                    
 `
+let countEr = 0
 let userScreen = document.documentElement.clientWidth
 const meetings = document.querySelectorAll(".week-meeting")
 meetings.forEach((val) => {
@@ -76,6 +77,10 @@ meetings.forEach((val) => {
         let newModal = document.createElement('div')
         newModal.classList.add('modal-daily-calendar')
         newModal.draggable = true
+        let meetingID = `meeting-${countEr}`
+        countEr++
+        val.id = meetingID
+        newModal.setAttribute('data-index', meetingID)
         newModal.innerHTML = modal
         let valPositionRight = val.getBoundingClientRect().right
         val.classList.add('selected-week-meeting')
@@ -90,15 +95,16 @@ meetings.forEach((val) => {
     })
 
 })
+
 ////добавить ID самого события в календаре для удаления активного класса при закрытии popup
 function closeModal(valTarger) {
     const modalList = document.querySelectorAll('.modal-daily-calendar')
     modalList.forEach((value) => {
+        let idxMeeting = value.getAttribute('data-index')
         let popup = value.querySelector('.close-modal-daily-calendar')
         popup.addEventListener('click', (e) => {
-            //e.target.parentNode.parentNode.remove()
             value.remove()
-            valTarger.classList.remove('selected-week-meeting')
+            document.getElementById(idxMeeting).classList.remove('selected-week-meeting')
         })
 ////////////////////////////////////////////////////////////////////////
         value.querySelector('.modal-daily-calendar-inner').onmousedown = function (event) {
@@ -109,13 +115,16 @@ function closeModal(valTarger) {
             value.style.zIndex = 1000
             document.body.append(value)
             moveAt(event.pageX, event.pageY)
+
             function moveAt(pageX, pageY) {
                 value.style.left = pageX - value.offsetWidth / 2 + 'px'
                 value.style.top = pageY - value.offsetHeight / 2 + 'px'
             }
+
             function onMouseMove(event) {
                 moveAt(event.pageX, event.pageY)
             }
+
             document.addEventListener('mousemove', onMouseMove)
             value.onmouseup = function () {
                 document.removeEventListener('mousemove', onMouseMove)
