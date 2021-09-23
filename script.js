@@ -99,7 +99,6 @@ meetings.forEach((val) => {
 
 })
 
-////добавить ID самого события в календаре для удаления активного класса при закрытии popup
 function closeModal(valTarger) {
     const modalList = document.querySelectorAll('.modal-daily-calendar')
     modalList.forEach((value) => {
@@ -109,7 +108,7 @@ function closeModal(valTarger) {
             value.remove()
             document.getElementById(idxMeeting).classList.remove('selected-week-meeting')
         })
-////////////////////////////////////////////////////////////////////////
+/////////////// drag && drop popup /////////////////////////////////////////////////////////
         value.querySelector('.modal-daily-calendar-inner').onmousedown = function (event) {
             value.ondragstart = function () {
                 return false;
