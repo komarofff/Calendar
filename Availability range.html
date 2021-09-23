@@ -186,7 +186,7 @@
         <div id="step-2" class="hidden mx-auto w-12/12 availability_page bg-white rounded-xl p-4 ">
             <div class=" w-full ">
                 <div class="mb-4 flex flex-nowrap flex items-center justify-start">
-                    <p class="text-lg font-semibold">Create availability</p>
+                    <p class="text-lg font-semibold">Create availability 2</p>
                 </div>
                 <div class="w-full inner-block-scroll  overflow-y-scroll flex flex-col  flex items-start justify-start">
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
@@ -217,7 +217,7 @@
         <div id="step-3" class="hidden mx-auto w-12/12 availability_page bg-white rounded-xl p-4 ">
             <div class=" w-full ">
                 <div class="mb-4 flex flex-nowrap flex items-center justify-start">
-                    <p class="text-lg font-semibold">Create availability</p>
+                    <p class="text-lg font-semibold">Create availability 3</p>
                 </div>
                 <div class="w-full inner-block-scroll  overflow-y-scroll flex flex-col  flex items-start justify-start">
 
@@ -227,7 +227,7 @@
                             <input class=" form-input  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
                                    type="text"
                                    value="" placeholder="Availability name*">
-                            <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Availability name*</span>
+                            <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">5Availability name*</span>
                         </p>
                         <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
                             Enter a name for your event. The circled text in the screen shot below is the event name.
@@ -275,8 +275,8 @@
     })
     //go to step 3
     document.querySelector('.go-to-step-3').addEventListener('click',()=>{
-        document.getElementById('step-2').classList.toggle('hidden')
-        document.getElementById('step-3').classList.toggle('hidden')
+        document.getElementById('step-2').classList.add('hidden')
+        document.getElementById('step-3').classList.remove('hidden')
     })
 
 
