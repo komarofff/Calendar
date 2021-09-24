@@ -29,12 +29,13 @@ let modal = `
                                                 <p class="candidate-text">candidate_2@gmail.com</p>
                                                 <p class="candidate-text">candidate_3@gmail.com</p>
                                             </div>
-                                            <div class="mb-3 w-full">
-                                                <p class="icon-link candidate-title ">Link to a meeting</p>
-                                                <p class="candidate-text"><a href="#">Copy</a></p>
-                                            </div>
+                                            
                                           </div>
                                            <div class=" mt-2 flex flex-col justify-start items-start"> 
+                                           <div class="mb-3 w-full">
+                                                <p class="icon-link candidate-title ">Link to a meeting</p>
+                                                <p class="candidate-text"><a class="copy-to-buffer" href="#">Copy</a></p>
+                                            </div>
                                             <div class="-ml-4 question-block">
                                                 <div class="mt-3 mb-2">
                                                     <p class="candidate-title ">Why did you choose us?</p>
@@ -143,5 +144,42 @@ function closeModal(valTarger) {
                 value.onmouseup = null
             }
         }
+//copy link to buffer
+        const links = document.querySelectorAll('.copy-to-buffer')
+        links.forEach((linkToBuffer)=>{
+
+            linkToBuffer.addEventListener('click',(e)=>{
+                e.preventDefault()
+                //console.log(linkToBuffer.href)
+                //add link to buffer
+                navigator.clipboard.writeText(linkToBuffer.href)
+                    .then(() => {
+                        //success
+                        let successPopup = document.createElement('div')
+                        successPopup.classList.add('successPopup')
+                        successPopup.innerHTML = `The link was copied to buffer successfully!`
+                        linkToBuffer.append(successPopup)
+                        setTimeout(()=>{
+                            successPopup.remove()
+                        },2000)
+
+                    })
+                    .catch(err => {
+                        //error
+                        //console.log(err)
+                        let successPopup = document.createElement('div')
+                        successPopup.classList.add('errorPopup')
+                        successPopup.innerHTML = `The link was not copied to buffer. Something wrong!`
+                        linkToBuffer.append(successPopup)
+                        setTimeout(()=>{
+                            successPopup.remove()
+                        },2000)
+                    });
+
+
+            })
+        })
+
     })
 }
+
