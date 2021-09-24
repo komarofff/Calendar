@@ -73,6 +73,7 @@ let modal = `
                                         </div
                                    
 `
+let zIndex =1000
 let countEr = 0
 let userScreen = document.documentElement.clientWidth
 const meetings = document.querySelectorAll(".week-meeting")
@@ -91,10 +92,14 @@ meetings.forEach((val) => {
             let valPositionRight = val.getBoundingClientRect().right
             val.classList.add('selected-week-meeting')
             val.parentNode.after(newModal)
+            let leftCorner = newModal.getBoundingClientRect().left
+            let topCorner = newModal.getBoundingClientRect().top
             let modalWidth = newModal.getBoundingClientRect().width
             let difference = userScreen - valPositionRight
+            zIndex++
+            val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `position: fixed;z-index:${zIndex}; top:${topCorner}px; left: ${leftCorner}px`
             if (difference < modalWidth) {
-                val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `left:-${modalWidth}px`
+                val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `position: fixed;z-index:${zIndex}; top:${topCorner}px; left:${leftCorner-modalWidth-modalWidth/1.6}px`
             }
             closeModal(val)
         }
@@ -114,11 +119,12 @@ function closeModal(valTarger) {
         })
 /////////////// drag && drop popup /////////////////////////////////////////////////////////
         value.querySelector('.modal-daily-calendar-catch-block').onmousedown = function (event) {
+
             value.ondragstart = function () {
                 return false;
             }
             value.style.position = 'fixed'
-            value.style.zIndex = 1000
+            //value.style.zIndex = 1000
             document.body.append(value)
             moveAt(event.pageX, event.pageY)
 

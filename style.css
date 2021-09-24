@@ -220,7 +220,7 @@ html {
 .modal-daily-calendar {
     z-index: 3;
     position: absolute;
-    top: -275px;
+    top: -220px;
     /* margin-top: 40px; */
     left: 94%;
     width: 320px;
