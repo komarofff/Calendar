@@ -239,7 +239,7 @@ html {
 }
 .modal-daily-calendar-catch-block{
     width: 100%;
-    cursor: pointer;
+    cursor: move;
 }
 .inner-block-scroll{
     overflow: hidden;
