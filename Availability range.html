@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="  relative">
-                            <p class="icon-link range-text"><a class="copy-to-buffer" href="http://www.meettribe.com/event/link2">Copy link</a></p>
+                            <p class="icon-link-green range-text"><a class="copy-to-buffer" href="http://www.meettribe.com/event/link1">Copy link</a></p>
                         </div>
                         <p class="border-b border-gray-200 w-full -ml-4 "></p>
                         <div class="w-full flex justify-between items-center flex-nowrap">
@@ -74,7 +74,41 @@
                             </div>
                         </div>
                         <div class="  relative">
-                            <p class="icon-link range-text"><a class="copy-to-buffer" href="http://www.meettribe.com/event/link2">Copy link</a></p>
+                            <p class="icon-link-green  range-text " ><a class="copy-to-buffer" href="http://www.meettribe.com/event/link2">Copy link</a></p>
+                        </div>
+                        <p class="border-b border-gray-200 w-full -ml-4 "></p>
+                        <div class="w-full flex justify-between items-center flex-nowrap">
+                            <div class="relative">
+                                <p class="icon-trash range-text text-delete cursor-pointer">Delete</p>
+                            </div>
+                            <div class="relative">
+                                <p class="icon-edit range-text text-edit cursor-pointer">Edit</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="range-block bg-white w-72 h-72 rounded-xl  m-4 p-4 range-disable">
+                    <div class="relative w-full flex justify-between items-center mb-4">
+                        <p class="text-lg font-semibold ">Client's meetings</p>
+                        <p class="range-switcher-off range-switcher"><span class="circle-in-switcher"></span></p>
+                    </div>
+                    <div class="mt-2 flex flex-col justify-between items-start pl-5 pt-2 pr-4 pb-2 range-inner-block">
+                        <div class=" relative">
+                            <p class="icon-view range-text"><a  href="#">View booking page</a></p>
+                        </div>
+                        <div>
+                            <div class="mb-2 relative">
+                                <p class="icon-date range-text">Duration: <span class="ml-2 font-medium">60 mins</span>
+                                </p>
+                            </div>
+                            <div class=" relative">
+                                <p class="icon-time range-text flex">Expires: <span class="ml-2 font-medium text-left">Indefinitely into the future</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="  relative">
+                            <p class="icon-link-green  range-text " ><a class="copy-to-buffer" href="http://www.meettribe.com/event/link3">Copy link</a></p>
                         </div>
                         <p class="border-b border-gray-200 w-full -ml-4 "></p>
                         <div class="w-full flex justify-between items-center flex-nowrap">
@@ -89,7 +123,6 @@
 
                 </div>
 
-
             </div>
         </div>
 
@@ -103,7 +136,7 @@
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-center justify-start relative">
                             <img class="mr-3" src="images/star.svg" alt="star">
-                            <input class=" form-input  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
+                            <input class=" form-input bg-white w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
                                    type="text"
                                    value="" placeholder="Availability name*">
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Availability name*</span>
@@ -116,7 +149,7 @@
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-center justify-start  relative">
                             <img class="mr-3" src="images/phone.svg" alt="star">
-                            <select class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-gray-400 ">
+                            <select class="bg-white form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-gray-400 ">
                                 <option value="" disabled selected>Position</option>
                                 <option value="Position 2">Position 2</option>
                                 <option value="Position 3">Position 3</option>
@@ -134,7 +167,7 @@
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                         <p class="w-4/12  flex items-center justify-start relative">
                             <img class="mr-3" src="images/external-link.svg" alt="star">
-                            <select class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-gray-400">
+                            <select class="bg-white form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-gray-400">
                                 <option value="" disabled selected>Location</option>
                                 <option value="Location 2">Location 2</option>
                                 <option value="Location 3">Location 3</option>
@@ -151,7 +184,7 @@
                         <p class="w-4/12  flex items-center justify-start relative">
                             <img class="mr-3" src="images/link-link.svg" alt="star">
                             <input id="event-link"
-                                   class=" form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
+                                   class="bg-white form-input w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
                                    type="text"
                                    value="" placeholder="Event link*">
                             <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black">Event link*</span>
@@ -274,11 +307,27 @@
             navigator.clipboard.writeText(linkToBuffer.href)
                 .then(() => {
                     //success
+                    let successPopup = document.createElement('div')
+                    successPopup.classList.add('successPopup')
+                    successPopup.innerHTML = `The link was copied to buffer successfully!`
+                    linkToBuffer.append(successPopup)
+                    setTimeout(()=>{
+                        successPopup.remove()
+                    },2000)
+
                 })
                 .catch(err => {
-                    console.log('Something went wrong', err);
+                    //error
+                    //console.log(err)
+                    let successPopup = document.createElement('div')
+                    successPopup.classList.add('errorPopup')
+                    successPopup.innerHTML = `The link was not copied to buffer. Something wrong!`
+                    linkToBuffer.append(successPopup)
+                    setTimeout(()=>{
+                        successPopup.remove()
+                    },2000)
                 });
-            
+
 
         })
     })

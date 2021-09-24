@@ -420,6 +420,20 @@ html {
     mask-size: cover;
     background: #004BFF;
 }
+.icon-link-green::before {
+    width: 15px;
+    height: 15px;
+    margin-left: -20px;
+    margin-right: 10px;
+    position: absolute;
+    top:1px;
+    content: '';
+    -webkit-mask: url("images/link.svg") no-repeat 50% 50%;
+    mask: url("images/link.svg") no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background: #295D7B;
+}
 
 .icon-view::before{
     width: 15px;
@@ -583,7 +597,47 @@ html {
 option:disabled{
     color: rgba(229, 231, 235, 0.6)
 }
-
+.copy-to-buffer{
+    position: relative;
+}
+.successPopup{
+    z-index:10;
+    position: absolute;
+    top: -31px;
+    margin-left: 111%;
+    background: #fff;
+    box-shadow: 0 0 20px #ccc;
+    width: 200px;
+    height:100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #015601;
+    font-size:14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+.errorPopup{
+    z-index:10;
+    position: absolute;
+    top: -31px;
+    margin-left: 111%;
+    background: #fff;
+    box-shadow: 0 0 20px #ccc;
+    width: 200px;
+    height:100px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8c0505;
+    font-size:14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
 @media (max-width: 1280px) {
     .time {
         left: -5vw;
