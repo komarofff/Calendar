@@ -8,28 +8,28 @@ let modal = `
 
                                         <div class="modal-daily-calendar-inner mt-2 flex flex-col justify-start items-start">
                                           <div class="modal-daily-calendar-catch-block ">
-                                            <div class="mb-3">
+                                            <div class="mb-3 w-full">
                                                 <p class="icon-date candidate-title ">Date</p>
                                                 <p class="candidate-text">14:30 - 15:00, July 13, 2021</p>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3 w-full">
                                                 <p class="icon-user candidate-title ">Candidate</p>
                                                 <p class="candidate-text">Alexander Rozaria</p>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3 w-full">
                                                 <p class="icon-time candidate-title ">Candidate’s time zone</p>
                                                 <p class="candidate-text">Central European time</p>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3 w-full">
                                                 <p class="icon-email candidate-title ">Candidate’s email</p>
                                                 <p class="candidate-text">candidate_1@gmail.com</p>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3 w-full">
                                                 <p class="icon-folder candidate-title ">Emails of other participants</p>
                                                 <p class="candidate-text">candidate_2@gmail.com</p>
                                                 <p class="candidate-text">candidate_3@gmail.com</p>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3 w-full">
                                                 <p class="icon-link candidate-title ">Link to a meeting</p>
                                                 <p class="candidate-text"><a href="#">Copy</a></p>
                                             </div>

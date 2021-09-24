@@ -222,7 +222,7 @@ html {
     position: absolute;
     top: -275px;
     /* margin-top: 40px; */
-    left: 97%;
+    left: 94%;
     width: 320px;
     height: 550px;
     max-height: 520px;
@@ -236,6 +236,10 @@ html {
     overflow: hidden;
     overflow-y: scroll;
     height: 448px;
+}
+.modal-daily-calendar-catch-block{
+    width: 100%;
+    cursor: pointer;
 }
 .inner-block-scroll{
     overflow: hidden;
