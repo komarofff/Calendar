@@ -7,6 +7,7 @@ let modal = `
                                         </div>
 
                                         <div class="modal-daily-calendar-inner mt-2 flex flex-col justify-start items-start">
+                                          <div class="modal-daily-calendar-catch-block ">
                                             <div class="mb-3">
                                                 <p class="icon-date candidate-title ">Date</p>
                                                 <p class="candidate-text">14:30 - 15:00, July 13, 2021</p>
@@ -32,6 +33,8 @@ let modal = `
                                                 <p class="icon-link candidate-title ">Link to a meeting</p>
                                                 <p class="candidate-text"><a href="#">Copy</a></p>
                                             </div>
+                                          </div>
+                                           <div class=" mt-2 flex flex-col justify-start items-start"> 
                                             <div class="-ml-4 question-block">
                                                 <div class="mt-3 mb-2">
                                                     <p class="candidate-title ">Why did you choose us?</p>
@@ -66,7 +69,8 @@ let modal = `
                                                         am attracted to the salary</label>
                                                 </p>
                                             </div>
-                                        </div>
+                                          </div>
+                                        </div
                                    
 `
 let countEr = 0
@@ -109,7 +113,7 @@ function closeModal(valTarger) {
             document.getElementById(idxMeeting).classList.remove('selected-week-meeting')
         })
 /////////////// drag && drop popup /////////////////////////////////////////////////////////
-        value.querySelector('.modal-daily-calendar-inner').onmousedown = function (event) {
+        value.querySelector('.modal-daily-calendar-catch-block').onmousedown = function (event) {
             value.ondragstart = function () {
                 return false;
             }
