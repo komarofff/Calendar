@@ -197,23 +197,30 @@ dayListOnWeek.forEach((val) => {
 const meeting = document.querySelector('.daily-calendar')
 let dayBlock = ''
 let hourBlock = ''
+// meeting data
+// in array title, time, link, candidate and ect.
+ meetingArray = [] // data about every meeting
+//
+
 for (let i = 0; i < 24; i++) {
-    if(i<10){
+    if (i < 10) {
         time = `0${i}`
-    }else{
+    } else {
         time = `${i}`
     }
     hourBlock = `    
 <div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
                         <div class="relative"><p
-                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
+                                class="week-grid text-center bg-white border  border-gray-200 p-2  ">
+                                <span class="week-meeting week-meeting-end p-1 text-sm">00:30-01:00 Daily Zoom</span>
+</p></div>
                         <div class="relative"><p
                                 class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
                         <div class="relative"><p
                                 class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
                         <div class="relative"><p class="week-grid text-center bg-white border border-gray-200 p-2  ">
                             <span class="week-meeting week-meeting-top p-1 text-sm">00:00-00:30 Daily Zoom,Meeting Super</span>
-                             <span class="week-meeting week-meeting-end p-1 text-sm">00:30-01:00 Daily Zoom</span>
+                             
                         </p></div>
                         <div class="relative"><p
                                 class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
@@ -226,4 +233,4 @@ for (let i = 0; i < 24; i++) {
     `
     dayBlock += hourBlock
 }
-meeting.innerHTML = dayBlock
+//meeting.innerHTML = dayBlock
