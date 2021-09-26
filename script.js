@@ -184,7 +184,7 @@ function putCurrentWeek() {/// доделать . выбор текущей не
     createDateMeeting()
 }
 
-//нужен массив всех недель для переключения на большом календаре
+
 
 
 //
@@ -218,6 +218,7 @@ function createDateMeeting() {
         for (let d = 0; d < datesArray.length; d++) {
             // каждый div отдельная дата и один и тот-же час
             // надо из массива выбрать  для КАЖДОЙ ДАТЫ ПО ОДИНАКОВОМУ времени
+            // возможно стоит переписать сетку для вывода данных по каждому дню отдельно
             hourBlock += `    
                         <div class="relative"><p
                                 class="week-grid text-center bg-white border  border-gray-200 p-2  ">
