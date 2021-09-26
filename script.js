@@ -102,7 +102,7 @@ function getAll() {
     for (let i = 0; i < weeks.length; i++) {
         weeks[i].addEventListener('click', (e) => {
             datesArray = []
-            // console.log('current week is ' + i)
+            console.log('current week is ' + i)
             let weekDates = weeks[i].querySelectorAll('td')
             weekDates.forEach((val) => {
                 let dataFromList = parseFloat(val.innerHTML)
@@ -274,10 +274,7 @@ function createDateMeeting() {
 script()
 
 function script() {
-
-    let modal = `
- 
-                                        <div class="relative w-full">
+    let modal = `             <div class="relative w-full">
                                             <p class="text-lg font-semibold ">Client's meetings</p>
                                             <img class="cursor-pointer absolute -top-2 right-1 close-modal-daily-calendar"
                                                  src="images/Close.svg" alt="close" title="Close">
