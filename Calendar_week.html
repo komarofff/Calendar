@@ -534,7 +534,7 @@
         }
         for (var i = 1; i <= Dlast; i++) {
             if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-                calendar += '<td class="today">' + i;
+                calendar += '<td class="today selectedDate">' + i;
             } else {
                 calendar += '<td>' + i;
             }
@@ -572,6 +572,8 @@
         const dates = document.querySelectorAll('#calendar2 tbody td')
         dates.forEach((data) => {
             data.addEventListener('click', (e) => {
+                document.querySelector('.selectedDate').classList.remove('selectedDate')
+                data.classList.add('selectedDate')
                 let calendarData = parseFloat(data.innerHTML)
                 if (!isNaN(calendarData)) {
                     let fullDate = calendarData + "." + calendarMonth + "." + calendarYear
@@ -594,7 +596,8 @@
                     dataFromList = ''                }
                datesArray.push(dataFromList)
             })
-            console.log(datesArray)
+            let selectedDate =  document.querySelector('.selectedDate').innerHTML
+            console.log(datesArray +' selected date is '+ selectedDate)
         })
     }
 </script>
