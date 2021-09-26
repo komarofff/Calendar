@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Buttons</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+        .div {
+            border: 1px solid #ccc;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        hr {
+            width: 100%;
+        }
+
+        button {
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        /*  BUTTON 1 */
+        .button1 {
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: center;
+            color: #051B2E;
+            background: #F4F8FB;
+            border: 1px solid #F0F1F1;
+            padding: 9px 39px;
+            outline: none;
+
+        }
+
+        .button1:hover {
+            background: #2A3E4F;
+            border: 1px solid #F0F1F1;
+            color: #FFFFFF;
+        }
+
+        .button1:active {
+            background: #F4F8FB;
+            border: 1px solid #F0F1F1;
+            color: #EE795C;
+        }
+
+        /*  BUTTON 2 */
+        .button2 {
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: center;
+            color: #fff;
+            background: #2A3E4F;
+            border-radius: 100px;
+            padding: 9px 80px;
+            outline: none;
+            border: none;
+        }
+
+        .button2:hover {
+            background: #295D7B;
+            box-shadow: 0px 4px 10px rgba(42, 62, 79, 0.4);
+            border-radius: 100px;
+        }
+
+        .button2_disabled {
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: center;
+            color: #fff;
+            background: #C5CBD0;
+            border-radius: 100px;
+            padding: 9px 80px;
+            outline: none;
+            border: none;
+            cursor: default;
+        }
+        /*  BUTTON 3 */
+        .button3{
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: center;
+            color: #fff;
+            padding: 9px 32px;
+            outline: none;
+            border: none;
+            background: #C20505;
+            border-radius: 100px;
+        }
+        .button3:hover{
+            background: #E60000;
+            box-shadow: 0px 4px 10px rgba(141, 0, 0, 0.5);
+        }
+        .button3:active{
+            background: #8D0000;
+            box-shadow: none;
+        }
+        /*  BUTTON 4 */
+        .button4{
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: center;
+            color: #2A3E4F;
+            padding: 9px 32px;
+            background: #fff;
+            border: 1px solid #2A3E4F;
+            box-sizing: border-box;
+            border-radius: 100px;
+        }
+        .button4:hover{
+            color: #BE563D;
+            border: 1px solid #BE563D;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 10px rgba(190, 86, 61, 0.2);
+            border-radius: 100px;
+        }
+        .button4:active{
+            background: #EE795C;
+            color: #fff;
+            box-shadow: none;
+            border: 1px solid #EE795C;
+        }
+        .button4_disabled{
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 130%;
+            text-align: center;
+            background: #fff;
+            padding: 9px 32px;
+            color: #C5CBD0;
+            border: 1px solid #C5CBD0;
+            border-radius: 100px;
+            cursor: default;
+        }
+
+    </style>
+</head>
+<body style="width:500px; margin:0 auto; display: flex; flex-direction: column;">
+<div class="div">
+    <button class="button1">Button 1</button>
+    <hr>
+    <button class="button2">Button 2</button>
+    <button class="button2_disabled">Inactive</button>
+    <hr>
+    <button class="button3">Button 3</button>
+    <hr>
+    <button class="button4">Button 4</button>
+    <button class="button4_disabled">Inactive</button>
+</div>
+
+</body>
+</html>
+
+
+
+

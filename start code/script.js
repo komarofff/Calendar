@@ -185,16 +185,18 @@ function putCurrentWeek() {/// доделать . выбор текущей не
 }
 
 
+
+
 //
-// const dayListOnWeek = document.querySelector('.header-of-calendar').querySelectorAll('p')
-// dayListOnWeek.forEach((val) => {
-//     val.addEventListener("click", () => {
-//         for (let i = 0; i < dayListOnWeek.length; i++) {
-//             dayListOnWeek[i].classList.remove('active-date-on-week')
-//         }
-//         val.classList.add('active-date-on-week')
-//     })
-// })
+const dayListOnWeek = document.querySelector('.header-of-calendar').querySelectorAll('p')
+dayListOnWeek.forEach((val) => {
+    val.addEventListener("click", () => {
+        for (let i = 0; i < dayListOnWeek.length; i++) {
+            dayListOnWeek[i].classList.remove('active-date-on-week')
+        }
+        val.classList.add('active-date-on-week')
+    })
+})
 
 //create date meeting
 function createDateMeeting() {
@@ -202,69 +204,37 @@ function createDateMeeting() {
     const meeting = document.querySelector('.daily-calendar')
     let dayBlock = ''
     let hourBlock = ''
-    let timeBlock = `
-    <div class="time-col absolute">
-                        <div class="relative  time"> 00:00</div>
-                        <div class="relative   time"> 01:00</div>
-                        <div class="relative   time"> 02:00</div>
-                        <div class="relative   time"> 03:00</div>
-                        <div class="relative   time"> 04:00</div>
-                        <div class="relative   time"> 05:00</div>
-                        <div class="relative   time"> 06:00</div>
-                        <div class="relative   time"> 07:00</div>
-                        <div class="relative   time"> 08:00</div>
-                        <div class="relative   time"> 09:00</div>
-                        <div class="relative   time"> 10:00</div>
-                        <div class="relative   time"> 11:00</div>
-                        <div class="relative   time"> 12:00</div>
-                        <div class="relative   time"> 13:00</div>
-                        <div class="relative   time"> 14:00</div>
-                        <div class="relative   time"> 15:00</div>
-                        <div class="relative   time"> 16:00</div>
-                        <div class="relative   time"> 17:00</div>
-                        <div class="relative   time"> 18:00</div>
-                        <div class="relative   time"> 19:00</div>
-                        <div class="relative   time"> 20:00</div>
-                        <div class="relative   time"> 21:00</div>
-                        <div class="relative   time"> 22:00</div>
-                        <div class="relative   time"> 23:00</div>
-
-
-                    </div>
-    `
 // meeting data
 // in array title, time, link, candidate and ect.
     const meetingArray = [] // data about every meeting
-    // use this data for creating calendar meetings above
 //
 //
+    for (let i = 0; i < 24; i++) {
+        if (i < 10) {
+            time = `0${i}`
+        } else {
+            time = `${i}`
+        }
+        for (let d = 0; d < datesArray.length; d++) {
+            // каждый div отдельная дата и один и тот-же час
+            // надо из массива выбрать  для КАЖДОЙ ДАТЫ ПО ОДИНАКОВОМУ времени
+            // возможно стоит переписать сетку для вывода данных по каждому дню отдельно
+            hourBlock += `    
+                        <div class="relative"><p
+                                class="week-grid text-center bg-white border  border-gray-200 p-2  ">
+                                <span class="week-meeting week-meeting-top p-1 text-sm">00:00-00:30 Daily Zoom,Meeting Super</span>
+                                <span class="week-meeting week-meeting-end p-1 text-sm">00:30-01:00 Daily Zoom</span>
+                        </p></div>                                            
 
-    for (let d = 0; d < datesArray.length; d++) {
-        for (let i = 0; i < 24; i++) {
-            if (i < 10) {
-                time = `0${i}`
-            } else {
-                time = `${i}`
-            }
-            // каждый div ОДНА дата и один час
-            // блок формируется из 24 блоков часов встреч
-            // следующий блок - следующая дата
-
-
-                hourBlock += `    
-                       <div class="relative">
-                            <p class="week-grid text-center bg-white border  border-gray-200 p-2  ">
-                                <span class="week-meeting week-meeting-top p-1 text-sm">${time}:00-00:30 Daily Zoom,Meeting Super</span>
-                                <span class="week-meeting week-meeting-end p-1 text-sm">00:00-00:30 Daily Zoom,Meeting Super</span>
-                            </p>
-                        </div>   `
+    `
 
         }
-        dayBlock += `<div class="day${d + 1}">${hourBlock}</div>` /// блок на один день 24 часа
+        hourBlock+=`<div class="absolute  top-0 time"> ${time}:00</div>`
+        dayBlock += `<div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">${hourBlock}</div>`
         hourBlock = ''
 
     }
-    meeting.innerHTML = timeBlock + dayBlock
+    meeting.innerHTML = dayBlock
     script()
 }
 
@@ -272,7 +242,6 @@ function createDateMeeting() {
 //////////////////////////////////////////////////////////////////////////////////
 //console.log("meetingArray="+meetingArray)
 script()
-
 function script() {
 
     let modal = `
@@ -374,7 +343,7 @@ function script() {
                 let topCorner = newModal.getBoundingClientRect().top
                 let modalWidth = newModal.getBoundingClientRect().width
                 let difference = userScreen - valPositionRight
-                // zIndex++
+               // zIndex++
                 val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `position: fixed;z-index:${zIndex}; top:${topCorner}px; left: ${leftCorner}px`
                 if (difference < modalWidth) {
                     val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `position: fixed;z-index:${zIndex}; top:${topCorner}px; left:${leftCorner - modalWidth - modalWidth / 1.6}px`
