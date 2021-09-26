@@ -625,7 +625,7 @@
             weeks[i].addEventListener('click', (e) => {
 
                datesArray = []
-                console.log('current week is ' + i)
+               // console.log('current week is ' + i)
                 let weekDates = weeks[i].querySelectorAll('td')
                 weekDates.forEach((val) => {
                     let dataFromList = parseFloat(val.innerHTML)
@@ -635,7 +635,13 @@
                     datesArray.push(dataFromList)
                 })
                 let selectedDate = document.querySelector('.selectedDate').innerHTML
-                document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + datesArray[0] + "-" + datesArray[6] + ", " + calendarYear
+                for(let q=0;q<datesArray.length;q++){
+                    if(datesArray[q] !== ''){ firstDate = datesArray[q] ; break}
+                }
+                for(let q=datesArray.length; q--;){
+                    if(datesArray[q] !== ''){ lastDate = datesArray[q] ; break}
+                }
+                document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + firstDate + "-" + lastDate + ", " + calendarYear
                 let headC = document.querySelector('.header-of-calendar')
                 let headerOfCalendar = headC.querySelectorAll('p')
                 for (let x = 0; x < headerOfCalendar.length; x++) {
@@ -647,18 +653,24 @@
                     }
                     //selectedDate
                 }
-                console.log(datesArray + ' selected date is ' + selectedDate + "  " + monthList[calendarMonth - 1] + "  " + calendarYear)
+                //console.log(datesArray + ' selected date is ' + selectedDate + "  " + monthList[calendarMonth - 1] + "  " + calendarYear)
             })
         }
     }
 function putCurrentWeek(){/// доделать . выбор текущей недели для большого календаря
     let selectedDate = document.querySelector('.selectedDate').innerHTML
-    document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + datesArray[0] + "-" + datesArray[6] + ", " + calendarYear
+    for(let q=0;q<datesArray.length;q++){
+        if(datesArray[q] !== ''){ firstDate = datesArray[q] ; break}
+    }
+    for(let q=datesArray.length;q--;){
+        if(datesArray[q] !== ''){ lastDate = datesArray[q] ; break}
+    }
+    document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + firstDate + "-" + lastDate + ", " + calendarYear
     let headC = document.querySelector('.header-of-calendar')
     let headerOfCalendar = headC.querySelectorAll('p')
     for (let x = 0; x < headerOfCalendar.length; x++) {
         headerOfCalendar[x].classList.remove('active-date-on-week')
-        console.log('datesArray[x]='+datesArray[x])
+        //console.log('datesArray[x]='+datesArray[x])
         if(datesArray[x] ===''){headerOfCalendar[x].innerHTML = daysOfWeek[x] + " " + datesArray[x]}
         else{headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]}
         if (parseFloat(datesArray[x]) === parseFloat(selectedDate)) {
