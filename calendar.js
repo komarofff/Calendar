@@ -81,35 +81,34 @@ function getDatesFromCalendar() {
     dates = document.querySelectorAll('#calendar2 tbody td')
     dates.forEach((data) => {
         data.addEventListener('click', (e) => {
-            let cont = document.querySelector('.selectedDate')
-
-            if (cont) {
-                document.querySelector('.selectedDate').classList.remove('selectedDate')
-            }
-            data.classList.add('selectedDate')
-            calendarData = parseFloat(data.innerHTML)
-            if (!isNaN(calendarData)) {
-                let fullDate = calendarData + "." + calendarMonth + "." + calendarYear
-                console.log(fullDate)
-            }
+            console.log("sobitie")
+             calendarData = parseFloat(data.innerHTML)
+                if (!isNaN(calendarData)) {
+                    let cont = document.querySelector('.selectedDate')
+                    if (cont) {
+                        document.querySelector('.selectedDate').classList.remove('selectedDate')
+                    }
+                    data.classList.add('selectedDate')
+                    let fullDate = calendarData + "." + calendarMonth + "." + calendarYear
+                    console.log(fullDate)
+                    getAll()
+                }
         })
     })
-    getAll()
 }
 
 function getAll() {
     const weeks = document.querySelectorAll('#calendar2 tbody tr')
-
     for (let i = 0; i < weeks.length; i++) {
         weeks[i].addEventListener('click', (e) => {
-
             datesArray = []
             // console.log('current week is ' + i)
             let weekDates = weeks[i].querySelectorAll('td')
             weekDates.forEach((val) => {
                 let dataFromList = parseFloat(val.innerHTML)
                 if (isNaN(dataFromList)) {
-                    dataFromList = ''
+                     dataFromList = ''
+
                 }
                 datesArray.push(dataFromList)
             })
@@ -126,21 +125,24 @@ function getAll() {
                     break
                 }
             }
-            document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + firstDate + "-" + lastDate + ", " + calendarYear
-            let headC = document.querySelector('.header-of-calendar')
-            let headerOfCalendar = headC.querySelectorAll('p')
-            for (let x = 0; x < headerOfCalendar.length; x++) {
-                headerOfCalendar[x].classList.remove('active-date-on-week')
-                if (datesArray[x] === '') {
-                    headerOfCalendar[x].innerHTML = daysOfWeek[x] + " " + datesArray[x]
-                } else {
-                    headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]
-                }
-                if (parseFloat(datesArray[x]) === parseFloat(selectedDate)) {
-                    headerOfCalendar[x].classList.add('active-date-on-week')
-                }
-                //selectedDate
-            }
+            //// change week header
+           if(! isNaN(calendarData)) {
+               document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + firstDate + "-" + lastDate + ", " + calendarYear
+               let headC = document.querySelector('.header-of-calendar')
+               let headerOfCalendar = headC.querySelectorAll('p')
+               for (let x = 0; x < headerOfCalendar.length; x++) {
+                   headerOfCalendar[x].classList.remove('active-date-on-week')
+                   if (datesArray[x] === '') {
+                       headerOfCalendar[x].innerHTML = daysOfWeek[x] + " " + datesArray[x]
+                   } else {
+                       headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]
+                   }
+                   if (parseFloat(datesArray[x]) === parseFloat(selectedDate)) {
+                       headerOfCalendar[x].classList.add('active-date-on-week')
+                   }
+                   //selectedDate
+               }
+           }
             //console.log(datesArray + ' selected date is ' + selectedDate + "  " + monthList[calendarMonth - 1] + "  " + calendarYear)
         })
     }
