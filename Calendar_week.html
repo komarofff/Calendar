@@ -16,7 +16,13 @@
         </div>
         <div id="calendar_page" class="flex justify-between nowrap w-full">
                         <div class="w-2/12 mr-8 left-calendar bg-white rounded-lg p-4">
-                            <img class="w-full" src="images/calendar_small.png" alt="">
+<!--                            <img class="w-full" src="images/calendar_small.png" alt="">-->
+                            <table id="calendar2">
+                                <thead>
+                                <tr><td>‹<td class="getMonth" colspan="5"><td>›
+                                <tr><td>Mon<td>Tue<td>Wed<td>Thu<td>Fri<td>Sat<td>Sun
+                                <tbody>
+                            </table>
                         </div>
                         <div class="w-10/12 calendar-block bg-white rounded-xl py-4 pl-2 ">
 
@@ -34,75 +40,7 @@
                                     <p class="cursor-pointer week-grid-top text-center button1 ">Friday, 16</p>
                                     <p class="cursor-pointer week-grid-top text-center button1 ">Saturday, 17</p>
                                     <p class="cursor-pointer week-grid-top text-center button1 rounded-tr-xl">Sunday, 18</p>
-<!--                                    <div class="hidden modal-daily-calendar">-->
-<!--                                        <div class="relative w-full">-->
-<!--                                            <p class="text-lg font-semibold ">Client's meetings</p>-->
-<!--                                            <img class="cursor-pointer absolute -top-2 right-1 close-modal-daily-calendar"-->
-<!--                                                 src="images/Close.svg" alt="close" title="Close">-->
-<!--                                        </div>-->
 
-<!--                                        <div class="modal-daily-calendar-inner mt-2 flex flex-col justify-start items-start">-->
-<!--                                            <div class="mb-3">-->
-<!--                                                <p class="icon-date candidate-title ">Date</p>-->
-<!--                                                <p class="candidate-text">14:30 - 15:00, July 13, 2021</p>-->
-<!--                                            </div>-->
-<!--                                            <div class="mb-3">-->
-<!--                                                <p class="icon-user candidate-title ">Candidate</p>-->
-<!--                                                <p class="candidate-text">Alexander Rozaria</p>-->
-<!--                                            </div>-->
-<!--                                            <div class="mb-3">-->
-<!--                                                <p class="icon-time candidate-title ">Candidate’s time zone</p>-->
-<!--                                                <p class="candidate-text">Central European time</p>-->
-<!--                                            </div>-->
-<!--                                            <div class="mb-3">-->
-<!--                                                <p class="icon-email candidate-title ">Candidate’s email</p>-->
-<!--                                                <p class="candidate-text">candidate_1@gmail.com</p>-->
-<!--                                            </div>-->
-<!--                                            <div class="mb-3">-->
-<!--                                                <p class="icon-folder candidate-title ">Emails of other participants</p>-->
-<!--                                                <p class="candidate-text">candidate_2@gmail.com</p>-->
-<!--                                                <p class="candidate-text">candidate_3@gmail.com</p>-->
-<!--                                            </div>-->
-<!--                                            <div class="mb-3">-->
-<!--                                                <p class="icon-link candidate-title ">Link to a meeting</p>-->
-<!--                                                <p class="candidate-text"><a href="#">Copy</a></p>-->
-<!--                                            </div>-->
-<!--                                            <div class="-ml-4 question-block">-->
-<!--                                                <div class="mt-3 mb-2">-->
-<!--                                                    <p class="candidate-title ">Why did you choose us?</p>-->
-<!--                                                </div>-->
-<!--                                                <p class="mb-2">-->
-<!--                                                    <label for="check1" class="candidate-text"><input type="checkbox" id="check1">-->
-<!--                                                        You are a big promising company</label>-->
-<!--                                                </p>-->
-<!--                                                <p class="mb-2">-->
-<!--                                                    <label for="check2" class="candidate-text"><input type="checkbox" id="check2"> I-->
-<!--                                                        like your product</label>-->
-<!--                                                </p>-->
-<!--                                                <p class="mb-2">-->
-<!--                                                    <label for="check3" class="candidate-text"><input type="checkbox" id="check3"> I-->
-<!--                                                        am attracted to the salary</label>-->
-<!--                                                </p>-->
-<!--                                            </div>-->
-<!--                                            <div class="-ml-4 question-block">-->
-<!--                                                <div class="mt-3 mb-2">-->
-<!--                                                    <p class="candidate-title ">Why did you choose us?</p>-->
-<!--                                                </div>-->
-<!--                                                <p class="mb-2">-->
-<!--                                                    <label for="check1" class="candidate-text"><input type="checkbox" id="check1">-->
-<!--                                                        You are a big promising company</label>-->
-<!--                                                </p>-->
-<!--                                                <p class="mb-2">-->
-<!--                                                    <label for="check2" class="candidate-text"><input type="checkbox" id="check2"> I-->
-<!--                                                        like your product</label>-->
-<!--                                                </p>-->
-<!--                                                <p class="mb-2">-->
-<!--                                                    <label for="check3" class="candidate-text"><input type="checkbox" id="check3"> I-->
-<!--                                                        am attracted to the salary</label>-->
-<!--                                                </p>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
                                 </div>
                             </div>
                             <div class="daily-calendar w-full pb-12">
@@ -406,5 +344,65 @@
     </div>
 </div>
 <script src="script.js"></script>
+<script>
+    function Calendar2(id, year, month) {
+        var Dlast = new Date(year,month+1,0).getDate(),
+            D = new Date(year,month,Dlast),
+            DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
+            DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
+            calendar = '<tr>',
+            month=["January","February","March","April","May","June","July","August","September","October","November","December"];
+        if (DNfirst != 0) {
+            for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
+        }else{
+            for(var  i = 0; i < 6; i++) calendar += '<td>';
+        }
+        for(var  i = 1; i <= Dlast; i++) {
+            if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+                calendar += '<td class="today">' + i;
+            }else{
+                calendar += '<td>' + i;
+            }
+            if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
+                calendar += '<tr>';
+            }
+        }
+        for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
+        document.querySelector('#'+id+' tbody').innerHTML = calendar;
+        document.querySelector('#'+id+' thead td:nth-child(2)').innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
+        document.querySelector('#'+id+' thead td:nth-child(2)').dataset.month = D.getMonth();
+        document.querySelector('#'+id+' thead td:nth-child(2)').dataset.year = D.getFullYear();
+        if (document.querySelectorAll('#'+id+' tbody tr').length < 6) {
+            document.querySelector('#'+id+' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
+        }
+    }
+    Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
+    getDatesFromCalendar()
+    // -month
+    document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
+        Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)-1);
+        getDatesFromCalendar()
+    }
+    // +month
+    document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
+        Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)+1);
+        getDatesFromCalendar()
+    }
+    ///////////////
+    function getDatesFromCalendar() {
+        const calendarMonth = parseFloat(document.getElementById('calendar2').querySelector('.getMonth').dataset.month)+1
+        const calendarYear = document.getElementById('calendar2').querySelector('.getMonth').dataset.year
+        const dates = document.querySelectorAll('#calendar2 tbody td')
+        dates.forEach((data) => {
+            data.addEventListener('click', (e) => {
+                let calendarData = parseFloat(data.innerHTML)
+                if( ! isNaN(calendarData ) ){
+                    let fullDate = calendarData + "." + calendarMonth + "." + calendarYear
+                    console.log(fullDate)
+                }
+            })
+        })
+    }
+</script>
 </body>
 </html>
