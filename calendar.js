@@ -81,18 +81,17 @@ function getDatesFromCalendar() {
     dates = document.querySelectorAll('#calendar2 tbody td')
     dates.forEach((data) => {
         data.addEventListener('click', (e) => {
-            console.log("sobitie")
-             calendarData = parseFloat(data.innerHTML)
-                if (!isNaN(calendarData)) {
-                    let cont = document.querySelector('.selectedDate')
-                    if (cont) {
-                        document.querySelector('.selectedDate').classList.remove('selectedDate')
-                    }
-                    data.classList.add('selectedDate')
-                    let fullDate = calendarData + "." + calendarMonth + "." + calendarYear
-                    console.log(fullDate)
-                    getAll()
+            calendarData = parseFloat(data.innerHTML)
+            if (!isNaN(calendarData)) {
+                let cont = document.querySelector('.selectedDate')
+                if (cont) {
+                    document.querySelector('.selectedDate').classList.remove('selectedDate')
                 }
+                data.classList.add('selectedDate')
+                let fullDate = calendarData + "." + calendarMonth + "." + calendarYear
+                console.log(fullDate)
+                getAll()
+            }
         })
     })
 }
@@ -107,7 +106,7 @@ function getAll() {
             weekDates.forEach((val) => {
                 let dataFromList = parseFloat(val.innerHTML)
                 if (isNaN(dataFromList)) {
-                     dataFromList = ''
+                    dataFromList = ''
 
                 }
                 datesArray.push(dataFromList)
@@ -126,23 +125,23 @@ function getAll() {
                 }
             }
             //// change week header
-           if(! isNaN(calendarData)) {
-               document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + firstDate + "-" + lastDate + ", " + calendarYear
-               let headC = document.querySelector('.header-of-calendar')
-               let headerOfCalendar = headC.querySelectorAll('p')
-               for (let x = 0; x < headerOfCalendar.length; x++) {
-                   headerOfCalendar[x].classList.remove('active-date-on-week')
-                   if (datesArray[x] === '') {
-                       headerOfCalendar[x].innerHTML = daysOfWeek[x] + " " + datesArray[x]
-                   } else {
-                       headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]
-                   }
-                   if (parseFloat(datesArray[x]) === parseFloat(selectedDate)) {
-                       headerOfCalendar[x].classList.add('active-date-on-week')
-                   }
-                   //selectedDate
-               }
-           }
+            if (!isNaN(calendarData)) {
+                document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + firstDate + "-" + lastDate + ", " + calendarYear
+                let headC = document.querySelector('.header-of-calendar')
+                let headerOfCalendar = headC.querySelectorAll('p')
+                for (let x = 0; x < headerOfCalendar.length; x++) {
+                    headerOfCalendar[x].classList.remove('active-date-on-week')
+                    if (datesArray[x] === '') {
+                        headerOfCalendar[x].innerHTML = daysOfWeek[x] + " " + datesArray[x]
+                    } else {
+                        headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]
+                    }
+                    if (parseFloat(datesArray[x]) === parseFloat(selectedDate)) {
+                        headerOfCalendar[x].classList.add('active-date-on-week')
+                    }
+                    //selectedDate
+                }
+            }
             //console.log(datesArray + ' selected date is ' + selectedDate + "  " + monthList[calendarMonth - 1] + "  " + calendarYear)
         })
     }
@@ -187,9 +186,44 @@ function putCurrentWeek() {/// доделать . выбор текущей не
 const dayListOnWeek = document.querySelector('.header-of-calendar').querySelectorAll('p')
 dayListOnWeek.forEach((val) => {
     val.addEventListener("click", () => {
-        for(let i=0;i<dayListOnWeek.length;i++){
+        for (let i = 0; i < dayListOnWeek.length; i++) {
             dayListOnWeek[i].classList.remove('active-date-on-week')
         }
         val.classList.add('active-date-on-week')
     })
 })
+
+//create date meeting
+const meeting = document.querySelector('.daily-calendar')
+let dayBlock = ''
+let hourBlock = ''
+for (let i = 0; i < 24; i++) {
+    if(i<10){
+        time = `0${i}`
+    }else{
+        time = `${i}`
+    }
+    hourBlock = `    
+<div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+                        <div class="relative"><p
+                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
+                        <div class="relative"><p
+                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
+                        <div class="relative"><p
+                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
+                        <div class="relative"><p class="week-grid text-center bg-white border border-gray-200 p-2  ">
+                            <span class="week-meeting week-meeting-top p-1 text-sm">00:00-00:30 Daily Zoom,Meeting Super</span>
+                             <span class="week-meeting week-meeting-end p-1 text-sm">00:30-01:00 Daily Zoom</span>
+                        </p></div>
+                        <div class="relative"><p
+                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
+                        <div class="relative"><p
+                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
+                        <div class="relative"><p
+                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
+                        <div class="absolute  top-0 time"> ${time}:00</div>
+</div>
+    `
+    dayBlock += hourBlock
+}
+meeting.innerHTML = dayBlock
