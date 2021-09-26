@@ -1,5 +1,248 @@
+function Calendar2(id, year, month) {
+    var Dlast = new Date(year, month + 1, 0).getDate(),
+        D = new Date(year, month, Dlast),
+        DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
+        DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
+        calendar = '<tr>',
+        month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    if (DNfirst != 0) {
+        for (var i = 1; i < DNfirst; i++) calendar += '<td>';
+    } else {
+        for (var i = 0; i < 6; i++) calendar += '<td>';
+    }
+    for (var i = 1; i <= Dlast; i++) {
+        if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+            calendar += '<td class="today selectedDate">' + i;
+        } else {
+            calendar += '<td>' + i;
+        }
+        if (new Date(D.getFullYear(), D.getMonth(), i).getDay() == 0) {
+            calendar += '<tr>';
+        }
+    }
+    for (var i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
+    document.querySelector('#' + id + ' tbody').innerHTML = calendar;
+    document.querySelector('#' + id + ' thead td:nth-child(2)').innerHTML = month[D.getMonth()] + ' ' + D.getFullYear();
+    document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.month = D.getMonth();
+    document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.year = D.getFullYear();
+    if (document.querySelectorAll('#' + id + ' tbody tr').length < 6) {
+        document.querySelector('#' + id + ' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
+    }
+}
+
+Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
+getDatesFromCalendar()
+// -month
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function () {
+    Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) - 1);
+    getDatesFromCalendar()
+}
+// +month
+document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
+    Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
+    getDatesFromCalendar()
+}
+
+///////////////
+const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+const monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+///////////////////////
+datesArray = []
+dateFromFunc = 0
+const dateOfToday = new Date();
+let today = dateOfToday.getDate()
+const weeksStart = document.querySelectorAll('#calendar2 tbody tr')
+for (let i = 0; i < weeksStart.length; i++) {
+    let weekDates = weeksStart[i].querySelectorAll('td')
+    weekDates.forEach((val) => {
+        let dataFromList = parseFloat(val.innerHTML)
+        if (dataFromList === today) {
+            dateFromFunc = i
+        }
+
+    })
+}
+
+let weekDates = weeksStart[dateFromFunc].querySelectorAll('td')
+weekDates.forEach((val) => {
+    let dataFromList = parseFloat(val.innerHTML)
+    if (isNaN(dataFromList)) {
+        dataFromList = ''
+    }
+    datesArray.push(dataFromList)
+})
+
+/////////////////////////
+putCurrentWeek()
+
+function getDatesFromCalendar() {
+    calendarMonth = parseFloat(document.getElementById('calendar2').querySelector('.getMonth').dataset.month) + 1
+    calendarYear = document.getElementById('calendar2').querySelector('.getMonth').dataset.year
+    dates = document.querySelectorAll('#calendar2 tbody td')
+    dates.forEach((data) => {
+        data.addEventListener('click', (e) => {
+            calendarData = parseFloat(data.innerHTML)
+            if (!isNaN(calendarData)) {
+                let cont = document.querySelector('.selectedDate')
+                if (cont) {
+                    document.querySelector('.selectedDate').classList.remove('selectedDate')
+                }
+                data.classList.add('selectedDate')
+                let fullDate = calendarData + "." + calendarMonth + "." + calendarYear
+                console.log(fullDate)
+                getAll()
+            }
+        })
+    })
+}
+
+function getAll() {
+    const weeks = document.querySelectorAll('#calendar2 tbody tr')
+    for (let i = 0; i < weeks.length; i++) {
+        weeks[i].addEventListener('click', (e) => {
+            datesArray = []
+            // console.log('current week is ' + i)
+            let weekDates = weeks[i].querySelectorAll('td')
+            weekDates.forEach((val) => {
+                let dataFromList = parseFloat(val.innerHTML)
+                if (isNaN(dataFromList)) {
+                    dataFromList = ''
+
+                }
+                datesArray.push(dataFromList)
+            })
+
+            let selectedDate = document.querySelector('.selectedDate').innerHTML
+            for (let q = 0; q < datesArray.length; q++) {
+                if (datesArray[q] !== '') {
+                    firstDate = datesArray[q];
+                    break
+                }
+            }
+            for (let q = datesArray.length; q--;) {
+                if (datesArray[q] !== '') {
+                    lastDate = datesArray[q];
+                    break
+                }
+            }
+            //// change week header
+            if (!isNaN(calendarData)) {
+                createDateMeeting()
+                document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + firstDate + "-" + lastDate + ", " + calendarYear
+                let headC = document.querySelector('.header-of-calendar')
+                let headerOfCalendar = headC.querySelectorAll('p')
+                for (let x = 0; x < headerOfCalendar.length; x++) {
+                    headerOfCalendar[x].classList.remove('active-date-on-week')
+                    if (datesArray[x] === '') {
+                        headerOfCalendar[x].innerHTML = daysOfWeek[x] + " " + datesArray[x]
+                    } else {
+                        headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]
+                    }
+                    if (parseFloat(datesArray[x]) === parseFloat(selectedDate)) {
+                        headerOfCalendar[x].classList.add('active-date-on-week')
+                    }
+                    //selectedDate
+                }
+            }
+            //console.log(datesArray + ' selected date is ' + selectedDate + "  " + monthList[calendarMonth - 1] + "  " + calendarYear)
+        })
+    }
+    createDateMeeting()
+}
+
+function putCurrentWeek() {/// доделать . выбор текущей недели для большого календаря
+    let selectedDate = document.querySelector('.selectedDate').innerHTML
+    for (let q = 0; q < datesArray.length; q++) {
+        if (datesArray[q] !== '') {
+            firstDate = datesArray[q];
+            break
+        }
+    }
+    for (let q = datesArray.length; q--;) {
+        if (datesArray[q] !== '') {
+            lastDate = datesArray[q];
+            break
+        }
+    }
+    document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + firstDate + "-" + lastDate + ", " + calendarYear
+    let headC = document.querySelector('.header-of-calendar')
+    let headerOfCalendar = headC.querySelectorAll('p')
+    for (let x = 0; x < headerOfCalendar.length; x++) {
+        headerOfCalendar[x].classList.remove('active-date-on-week')
+        //console.log('datesArray[x]='+datesArray[x])
+        if (datesArray[x] === '') {
+            headerOfCalendar[x].innerHTML = daysOfWeek[x] + " " + datesArray[x]
+        } else {
+            headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]
+        }
+        if (parseFloat(datesArray[x]) === parseFloat(selectedDate)) {
+            headerOfCalendar[x].classList.add('active-date-on-week')
+        }
+        //selectedDate
+    }
+    createDateMeeting()
+}
+
+//нужен массив всех недель для переключения на большом календаре
+
+
+//
+const dayListOnWeek = document.querySelector('.header-of-calendar').querySelectorAll('p')
+dayListOnWeek.forEach((val) => {
+    val.addEventListener("click", () => {
+        for (let i = 0; i < dayListOnWeek.length; i++) {
+            dayListOnWeek[i].classList.remove('active-date-on-week')
+        }
+        val.classList.add('active-date-on-week')
+    })
+})
+
+//create date meeting
+function createDateMeeting() {
+    console.log('datesArray = ' + datesArray)
+    const meeting = document.querySelector('.daily-calendar')
+    let dayBlock = ''
+    let hourBlock = ''
+// meeting data
+// in array title, time, link, candidate and ect.
+    meetingArray = [] // data about every meeting
+//
+//
+    for (let i = 0; i < 24; i++) {
+        if (i < 10) {
+            time = `0${i}`
+        } else {
+            time = `${i}`
+        }
+        for (let d = 0; d < datesArray.length; d++) {
+            // каждый div отдельная дата и один и тот-же час
+            // надо из массива выбрать  для КАЖДОЙ ДАТЫ ПО ОДИНАКОВОМУ времени
+            hourBlock += `    
+                        <div class="relative"><p
+                                class="week-grid text-center bg-white border  border-gray-200 p-2  ">
+                                <span class="week-meeting week-meeting-top p-1 text-sm">00:00-00:30 Daily Zoom,Meeting Super</span>
+                                <span class="week-meeting week-meeting-end p-1 text-sm">00:30-01:00 Daily Zoom</span>
+                        </p></div>                                            
+
+    `
+
+        }
+        hourBlock+=`<div class="absolute  top-0 time"> ${time}:00</div>`
+        dayBlock += `<div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">${hourBlock}</div>`
+        hourBlock = ''
+
+    }
+    meeting.innerHTML = dayBlock
+    popUps()
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////
 //console.log("meetingArray="+meetingArray)
-let modal = `
+
+popUps()
+function popUps() {
+    let modal = `
  
                                         <div class="relative w-full">
                                             <p class="text-lg font-semibold ">Client's meetings</p>
@@ -75,41 +318,41 @@ let modal = `
                                         </div
                                    
 `
-let zIndex =1000
-let countEr = 0
-let userScreen = document.documentElement.clientWidth
-const meetings = document.querySelectorAll(".week-meeting")
-meetings.forEach((val) => {
-    val.addEventListener("click", (e) => {
-     let contains = val.classList.contains('selected-week-meeting')
-        if(contains===false) {
-            let newModal = document.createElement('div')
-            newModal.classList.add('modal-daily-calendar')
-            newModal.draggable = true
-            let meetingID = `meeting-${countEr}`
-            countEr++
-            val.id = meetingID
-            newModal.setAttribute('data-index', meetingID)
-            newModal.innerHTML = modal
-            let valPositionRight = val.getBoundingClientRect().right
-            val.classList.add('selected-week-meeting')
-            val.parentNode.after(newModal)
-            let leftCorner = newModal.getBoundingClientRect().left
-            let topCorner = newModal.getBoundingClientRect().top
-            let modalWidth = newModal.getBoundingClientRect().width
-            let difference = userScreen - valPositionRight
-            zIndex++
-            val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `position: fixed;z-index:${zIndex}; top:${topCorner}px; left: ${leftCorner}px`
-            if (difference < modalWidth) {
-                val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `position: fixed;z-index:${zIndex}; top:${topCorner}px; left:${leftCorner-modalWidth-modalWidth/1.6}px`
+    let zIndex = 1000
+    let countEr = 0
+    let userScreen = document.documentElement.clientWidth
+    const meetings = document.querySelectorAll(".week-meeting")
+    meetings.forEach((val) => {
+        val.addEventListener("click", (e) => {
+            let contains = val.classList.contains('selected-week-meeting')
+            if (contains === false) {
+                let newModal = document.createElement('div')
+                newModal.classList.add('modal-daily-calendar')
+                newModal.draggable = true
+                let meetingID = `meeting-${countEr}`
+                countEr++
+                val.id = meetingID
+                newModal.setAttribute('data-index', meetingID)
+                newModal.innerHTML = modal
+                let valPositionRight = val.getBoundingClientRect().right
+                val.classList.add('selected-week-meeting')
+                val.parentNode.after(newModal)
+                let leftCorner = newModal.getBoundingClientRect().left
+                let topCorner = newModal.getBoundingClientRect().top
+                let modalWidth = newModal.getBoundingClientRect().width
+                let difference = userScreen - valPositionRight
+                zIndex++
+                val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `position: fixed;z-index:${zIndex}; top:${topCorner}px; left: ${leftCorner}px`
+                if (difference < modalWidth) {
+                    val.parentNode.parentNode.querySelector('.modal-daily-calendar').style.cssText = `position: fixed;z-index:${zIndex}; top:${topCorner}px; left:${leftCorner - modalWidth - modalWidth / 1.6}px`
+                }
+                closeModal(val)
             }
-            closeModal(val)
-        }
+
+        })
 
     })
-
-})
-
+}
 function closeModal(valTarger) {
     const modalList = document.querySelectorAll('.modal-daily-calendar')
     modalList.forEach((value) => {

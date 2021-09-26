@@ -111,6 +111,7 @@ function getAll() {
                 }
                 datesArray.push(dataFromList)
             })
+
             let selectedDate = document.querySelector('.selectedDate').innerHTML
             for (let q = 0; q < datesArray.length; q++) {
                 if (datesArray[q] !== '') {
@@ -126,6 +127,7 @@ function getAll() {
             }
             //// change week header
             if (!isNaN(calendarData)) {
+                createDateMeeting()
                 document.querySelector('.current-week').innerHTML = monthList[calendarMonth - 1] + " " + firstDate + "-" + lastDate + ", " + calendarYear
                 let headC = document.querySelector('.header-of-calendar')
                 let headerOfCalendar = headC.querySelectorAll('p')
@@ -145,6 +147,7 @@ function getAll() {
             //console.log(datesArray + ' selected date is ' + selectedDate + "  " + monthList[calendarMonth - 1] + "  " + calendarYear)
         })
     }
+    createDateMeeting()
 }
 
 function putCurrentWeek() {/// доделать . выбор текущей недели для большого календаря
@@ -177,6 +180,7 @@ function putCurrentWeek() {/// доделать . выбор текущей не
         }
         //selectedDate
     }
+    createDateMeeting()
 }
 
 //нужен массив всех недель для переключения на большом календаре
@@ -194,43 +198,41 @@ dayListOnWeek.forEach((val) => {
 })
 
 //create date meeting
-const meeting = document.querySelector('.daily-calendar')
-let dayBlock = ''
-let hourBlock = ''
+function createDateMeeting() {
+    console.log('datesArray = ' + datesArray)
+    const meeting = document.querySelector('.daily-calendar')
+    let dayBlock = ''
+    let hourBlock = ''
 // meeting data
 // in array title, time, link, candidate and ect.
- meetingArray = [] // data about every meeting
+    meetingArray = [] // data about every meeting
 //
-
-for (let i = 0; i < 24; i++) {
-    if (i < 10) {
-        time = `0${i}`
-    } else {
-        time = `${i}`
-    }
-    hourBlock = `    
-<div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">
+//
+    for (let i = 0; i < 24; i++) {
+        if (i < 10) {
+            time = `0${i}`
+        } else {
+            time = `${i}`
+        }
+        for (let d = 0; d < datesArray.length; d++) {
+            // каждый div отдельная дата и один и тот-же час
+            // надо из массива выбрать  для КАЖДОЙ ДАТЫ ПО ОДИНАКОВОМУ времени
+            hourBlock += `    
                         <div class="relative"><p
                                 class="week-grid text-center bg-white border  border-gray-200 p-2  ">
+                                <span class="week-meeting week-meeting-top p-1 text-sm">00:00-00:30 Daily Zoom,Meeting Super</span>
                                 <span class="week-meeting week-meeting-end p-1 text-sm">00:30-01:00 Daily Zoom</span>
-</p></div>
-                        <div class="relative"><p
-                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
-                        <div class="relative"><p
-                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
-                        <div class="relative"><p class="week-grid text-center bg-white border border-gray-200 p-2  ">
-                            <span class="week-meeting week-meeting-top p-1 text-sm">00:00-00:30 Daily Zoom,Meeting Super</span>
-                             
-                        </p></div>
-                        <div class="relative"><p
-                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
-                        <div class="relative"><p
-                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
-                        <div class="relative"><p
-                                class="week-grid text-center bg-white border  border-gray-200 p-2  "></p></div>
-                        <div class="absolute  top-0 time"> ${time}:00</div>
-</div>
+                        </p></div>                                            
+
     `
-    dayBlock += hourBlock
+
+        }
+        hourBlock+=`<div class="absolute  top-0 time"> ${time}:00</div>`
+        dayBlock += `<div class="w-11/12  grid grid-cols-7 ml-auto  justify-items-center mr-4 relative">${hourBlock}</div>`
+        hourBlock = ''
+
+    }
+    meeting.innerHTML = dayBlock
+    popUps()
 }
-//meeting.innerHTML = dayBlock
+
