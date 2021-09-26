@@ -673,6 +673,10 @@ option:disabled{
     background: #0A246A;
     color:#fff;
 }
+.selectedDate{
+    background: darkred;
+    color: #fff !important;
+}
 @media (max-width: 1280px) {
     .time {
         left: -5vw;

@@ -584,7 +584,7 @@
 
         })
     }
-    /// паолучить текущую неделю по сегодняшней дате
+
         let weekDates = weeksStart[dateFromFunc].querySelectorAll('td')
         weekDates.forEach((val) => {
             let dataFromList = parseFloat(val.innerHTML)
@@ -623,6 +623,7 @@
 
         for (let i = 0; i < weeks.length; i++) {
             weeks[i].addEventListener('click', (e) => {
+
                datesArray = []
                 console.log('current week is ' + i)
                 let weekDates = weeks[i].querySelectorAll('td')
@@ -639,7 +640,8 @@
                 let headerOfCalendar = headC.querySelectorAll('p')
                 for (let x = 0; x < headerOfCalendar.length; x++) {
                     headerOfCalendar[x].classList.remove('active-date-on-week')
-                    headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]
+                    if(datesArray[x] ===''){headerOfCalendar[x].innerHTML = daysOfWeek[x] + " " + datesArray[x]}
+                    else{headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]}
                     if (parseFloat(datesArray[x]) === parseFloat(selectedDate)) {
                         headerOfCalendar[x].classList.add('active-date-on-week')
                     }
@@ -656,7 +658,9 @@ function putCurrentWeek(){/// доделать . выбор текущей не�
     let headerOfCalendar = headC.querySelectorAll('p')
     for (let x = 0; x < headerOfCalendar.length; x++) {
         headerOfCalendar[x].classList.remove('active-date-on-week')
-        headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]
+        console.log('datesArray[x]='+datesArray[x])
+        if(datesArray[x] ===''){headerOfCalendar[x].innerHTML = daysOfWeek[x] + " " + datesArray[x]}
+        else{headerOfCalendar[x].innerHTML = daysOfWeek[x] + ", " + datesArray[x]}
         if (parseFloat(datesArray[x]) === parseFloat(selectedDate)) {
             headerOfCalendar[x].classList.add('active-date-on-week')
         }
