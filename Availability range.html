@@ -349,8 +349,9 @@
                 class="  w-full h-20 focus:outline-none focus:border-black p-2 rounded-lg border border-gray-200  focus:placeholder-white text-base"
                 value="" id="question" placeholder="Question*" required></textarea>
         <p class="w-full flex justify-between items-center my-2">
-            <label for="checkQuest" class="text-sm "><input type="checkbox" id="checkQuest"><span class="ml-3">Required</span></label>
-        <span class="range-switcher-on range-switcher-question"><span class="circle-in-switcher"></span></span>
+            <label for="checkQuest" class="text-sm "><input type="checkbox" id="checkQuest"><span
+                    class="ml-3">Required</span></label>
+            <span class="range-switcher-on range-switcher-question"><span class="circle-in-switcher"></span></span>
         </p>
 
         <p class="w-full  flex items-center justify-end relative text-sm">
@@ -476,11 +477,11 @@
     })
 
     // add new question
-    document.querySelector('.range-switcher-question').addEventListener('click',(e)=>{
+    document.querySelector('.range-switcher-question').addEventListener('click', (e) => {
         document.querySelector('.range-switcher-question').classList.toggle('range-switcher-on')
         document.querySelector('.range-switcher-question').classList.toggle('range-switcher-off')
     })
-
+    // open-close modal question
     document.querySelector('.add-question').addEventListener('click', () => {
         document.querySelector('.new-question-modal').classList.remove('hidden')
         document.querySelector('.black-window').classList.remove('hidden')
@@ -488,20 +489,20 @@
             document.querySelector('.black-window').classList.add('hidden')
             document.querySelector('.new-question-modal').classList.add('hidden')
         })
-
-        document.querySelector('.save-question').addEventListener('click',()=>{
+// save question
+        document.querySelector('.save-question').addEventListener('click', () => {
             let requiredTag = ''
             let required = ''
             let questions = document.querySelectorAll('.question-block')
             let countOfQuestions = questions.length + 1
             let newQuestion = document.getElementById('question').value
-            if(newQuestion !== '') {
+            if (newQuestion !== '') {
                 let rules = document.getElementById('checkQuest')
                 if (rules.checked) {
                     required = '*';
                     requiredTag = 'required';
                 }
-
+//create new element
                 let newBlock = document.createElement('div')
                 newBlock.classList.add('w-full', 'question-block')
                 let questionBlock = `
