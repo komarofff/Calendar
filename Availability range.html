@@ -250,9 +250,11 @@
                         <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                             <div class="w-4/12  flex items-center justify-start relative">
                                 <img class="mr-4 cursor-pointer radio" src="images/circle-unchecked.svg" alt="">
-                                <div class="relative form-input2-top cursor-pointer   w-full hover:border-black hover:outline-none p-2 rounded-lg border border-gray-200 text-gray-300 ">
-                                    <p>Date range</p>
-                                    <p class="absolute z-50 bg-white rounded-lg shadow-lg w-full  p-2 top-12 left-0 border border-gray-100 text-black flex justify-between items-start">
+                                <div class="relative form-input2-top    w-full hover:border-black hover:outline-none p-2 rounded-lg border border-gray-200 text-gray-300 ">
+                                    <p class="flex justify-between items-center"><span>Date range</span>
+                                        <img class="cursor-pointer open-close-date-range" src="images/arrow-down.svg"
+                                                                                                              alt=""> </p>
+                                    <p class="hidden popup-range absolute z-50 bg-white rounded-lg shadow-lg w-full  p-2 top-12 left-0 border border-gray-100 text-black flex justify-between items-start">
                                         <img class="m-2 w-full"  src="images/calendar-left.png" alt="">
                                         <img class="m-2 w-full" src="images/calendar-right.png" alt="">
                                     </p>
@@ -547,6 +549,18 @@
 
 
 <script>
+    //open-close date-range popup
+    document.querySelector('.form-input2-top').addEventListener('mouseover',(e)=>{
+        e.target.parentNode.parentNode.parentNode.querySelector('.right-text').classList.remove('opacity-30')
+    })
+    document.querySelector('.form-input2-top').addEventListener('mouseout',(e)=>{
+        e.target.parentNode.parentNode.parentNode.querySelector('.right-text').classList.add('opacity-30')
+    })
+
+    document.querySelector('.open-close-date-range').addEventListener('click',()=>{
+        document.querySelector('.popup-range').classList.toggle('hidden')
+        document.querySelector('.open-close-date-range').classList.toggle('rotate')
+    })
     // check-uncheck circle
     const circles = document.querySelectorAll('.radio')
     circles.forEach((val) => {
