@@ -253,9 +253,9 @@
                                 <div class="relative form-input2-top    w-full hover:border-black hover:outline-none p-2 rounded-lg border border-gray-200 text-gray-300 ">
                                     <p class="flex justify-between items-center"><span>Date range</span>
                                         <img class="cursor-pointer open-close-date-range" src="images/arrow-down.svg"
-                                                                                                              alt=""> </p>
+                                             alt=""></p>
                                     <p class="hidden popup-range absolute z-50 bg-white rounded-lg shadow-lg w-full  p-2 top-12 left-0 border border-gray-100 text-black flex justify-between items-start">
-                                        <img class="m-2 w-full"  src="images/calendar-left.png" alt="">
+                                        <img class="m-2 w-full" src="images/calendar-left.png" alt="">
                                         <img class="m-2 w-full" src="images/calendar-right.png" alt="">
                                     </p>
 
@@ -326,8 +326,49 @@
                                     header
                                 </div>
                                 <div class="px-4 w-full">
-                                    <div class="w-full border-b border-gray-200 p-4">
-                                        1
+                                    <div class="w-full border-b border-gray-200 p-4 flex justify-between items-center">
+                                        <div>start</div>
+                                        <div class="flex items-center justify-start">
+                                            <p class="w-24  flex items-center justify-start relative mr-4">
+
+                                                <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
+                                                    <option value="" disabled selected>-</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="8">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                                <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
+                                            </p>
+                                            <p class="w-24  flex items-center justify-start relative mr-4">
+
+                                                <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
+                                                    <option value="" disabled selected>-</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="8">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                                <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
+                                            </p>
+                                        </div>
+                                        <img src="images/plus.svg" alt="">
                                     </div>
                                     <div class="w-full border-b border-gray-200 p-4">
                                         2
@@ -550,14 +591,14 @@
 
 <script>
     //open-close date-range popup
-    document.querySelector('.form-input2-top').addEventListener('mouseover',(e)=>{
+    document.querySelector('.form-input2-top').addEventListener('mouseover', (e) => {
         e.target.parentNode.parentNode.parentNode.querySelector('.right-text').classList.remove('opacity-30')
     })
-    document.querySelector('.form-input2-top').addEventListener('mouseout',(e)=>{
+    document.querySelector('.form-input2-top').addEventListener('mouseout', (e) => {
         e.target.parentNode.parentNode.parentNode.querySelector('.right-text').classList.add('opacity-30')
     })
 
-    document.querySelector('.open-close-date-range').addEventListener('click',()=>{
+    document.querySelector('.open-close-date-range').addEventListener('click', () => {
         document.querySelector('.popup-range').classList.toggle('hidden')
         document.querySelector('.open-close-date-range').classList.toggle('rotate')
     })
