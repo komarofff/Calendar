@@ -249,7 +249,7 @@
                         <p class="w-full   mt-3 pl-2">Date range</p>
                         <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                             <p class="w-4/12  flex items-center justify-start relative">
-                                <input type="radio" >
+                                <img class="mr-4 cursor-pointer radio" src="images/circle-unchecked.svg" alt="">
                                 <input class=" form-input  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
                                        type="text"
                                        value="" placeholder="Date range">
@@ -367,6 +367,14 @@
 
 
 <script>
+    // check-uncheck circle
+   const circles= document.querySelectorAll('.radio')
+    circles.forEach((val)=>{
+        val.addEventListener('click',()=>{
+            val.src = 'images/circle-checked.svg'
+        })
+    })
+
     //copy link to buffer
     const links = document.querySelectorAll('.copy-to-buffer')
     links.forEach((linkToBuffer) => {
