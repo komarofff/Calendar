@@ -26,17 +26,17 @@ html {
 
 }
 
-.button1:hover {
-    background: #2A3E4F;
-    border: 1px solid #F0F1F1;
-    color: #FFFFFF;
-}
+/*.button1:hover {*/
+/*    background: #2A3E4F;*/
+/*    border: 1px solid #F0F1F1;*/
+/*    color: #FFFFFF;*/
+/*}*/
 
-.button1:active {
-    background: #F4F8FB;
-    border: 1px solid #F0F1F1;
-    color: #EE795C;
-}
+/*.button1:active {*/
+/*    background: #F4F8FB;*/
+/*    border: 1px solid #F0F1F1;*/
+/*    color: #EE795C;*/
+/*}*/
 
 /*  BUTTON 2 */
 .button2 {
@@ -194,6 +194,7 @@ html {
 .daily-calendar {
     max-height: 67vh;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 /*.modal-daily-calendar {*/
@@ -277,14 +278,15 @@ html {
 .week-grid-top {
     width: 11vw;
 
+
 }
 
 .week-grid {
     width: 11vw;
+
     min-height: 65px;
     overflow-x: hidden;
     z-index: 2;
-
     position: relative;
 }
 
@@ -318,9 +320,19 @@ html {
 }
 
 .time {
-    left: -4vw;
+    left: -36vw;
+    z-index:9;
 }
 
+.time:nth-child(odd){
+    margin-top:45px;
+}
+.time:nth-child(even){
+    margin-top:45px;
+}
+.time:nth-child(1){
+    margin-top:0px;
+}
 /*  MODAL week daily meeting */
 
 
@@ -677,8 +689,13 @@ option:disabled{
     background: darkred;
     color: #fff !important;
 }
+@media (max-width: 1500px) {
+    .time {
+        left: -34vw;
+    }
+}
 @media (max-width: 1280px) {
     .time {
-        left: -5vw;
+        left: -33vw;
     }
 }
