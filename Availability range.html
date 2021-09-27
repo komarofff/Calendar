@@ -276,7 +276,7 @@
                         <p class="w-full   my-3 pl-2 font-semibold">Duration</p>
                         <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                             <div class="w-4/12 flex items-center justify-start">
-                                <p class="w-2/12  flex items-center justify-start relative mr-4">
+                                <p class="w-24  flex items-center justify-start relative mr-4">
 
                                     <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
                                         <option value="" disabled selected>-</option>
@@ -295,7 +295,7 @@
                                     </select>
                                     <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
                                 </p>
-                                <p class="w-2/12  flex items-center justify-start relative">
+                                <p class="w-24  flex items-center justify-start relative">
 
                                     <select class="form-input2 bg-white  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
                                         <option value="" disabled selected>-</option>
@@ -356,7 +356,7 @@
                         <p class="w-full   my-3 pl-2 font-semibold">Time before or after your events</p>
                         <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                             <div class="w-4/12 flex items-center justify-start">
-                                <p class="w-2/12  flex items-center justify-start relative mr-4">
+                                <p class="w-6/12 flex items-center justify-start relative mr-4">
 
                                     <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
                                         <option value="" disabled selected>-</option>
@@ -373,9 +373,9 @@
                                         <option value="11">11</option>
                                         <option value="12">12</option>
                                     </select>
-                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
+                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">before</span>
                                 </p>
-                                <p class="w-2/12  flex items-center justify-start relative">
+                                <p class="w-6/12  flex items-center justify-start relative">
 
                                     <select class="form-input2 bg-white  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
                                         <option value="" disabled selected>-</option>
@@ -383,7 +383,7 @@
                                         <option value="30">30</option>
                                         <option value="45">45</option>
                                     </select>
-                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">minutes</span>
+                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">after</span>
                                 </p>
                             </div>
                             <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
@@ -397,35 +397,22 @@
                         <p class="w-full   my-1 pl-2 text-sm">Invitees can't schedule within...</p>
                         <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                             <div class="w-4/12 flex items-center justify-start">
-                                <p class="w-2/12  flex items-center justify-start relative mr-4">
+                                <p class="w-12  flex items-center justify-start relative mr-4">
 
-                                    <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
-                                        <option value="" disabled selected>-</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="8">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>
-                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
+                                    <input type="text" placeholder="4" value="4" class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
+
                                 </p>
-                                <p class="w-2/12  flex items-center justify-start relative">
+                                <p class="w-24  flex items-center justify-start relative">
 
                                     <select class="form-input2 bg-white  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
-                                        <option value="" disabled selected>-</option>
-                                        <option value="15">15</option>
-                                        <option value="30">30</option>
-                                        <option value="45">45</option>
+                                        <option value="" disabled selected>hours</option>
+                                        <option value="">minutes</option>
+                                        <option value="">hours</option>
+                                        <option value="">days</option>
                                     </select>
-                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">minutes</span>
+                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black"></span>
                                 </p>
+                                <p class="w-5/12 ml-1 text-sm">of an event start time</p>
                             </div>
                             <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
                                 Set the minimum amount of notice that is required and how many events are allowed per
@@ -439,26 +426,13 @@
                             event</p>
                         <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
                             <div class="w-4/12 flex items-center justify-start">
-                                <p class="w-2/12  flex items-center justify-start relative mr-4">
+                                <p class="w-12   flex items-center justify-start relative mr-4">
 
-                                    <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
-                                        <option value="" disabled selected>4</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="8">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>
+                                    <input type="text" placeholder="4" value="4" class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
+
                                     <!--                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>-->
                                 </p>
-                                <p class="w-2/12  flex items-center justify-start relative">
+                                <p class="w-3/12  flex items-center justify-start relative">
                                 </p>
                             </div>
                             <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
