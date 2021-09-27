@@ -248,14 +248,16 @@
                     <div class="w-full">
                         <p class="w-full   my-3 pl-2 font-semibold">Date range</p>
                         <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
-                            <p class="w-4/12  flex items-center justify-start relative">
+                            <div class="w-4/12  flex items-center justify-start relative">
                                 <img class="mr-4 cursor-pointer radio" src="images/circle-unchecked.svg" alt="">
-                                <input class=" form-input2  w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"
-                                       type="text"
-                                       value="" placeholder="Date range">
+                                <div class="relative form-input2-top cursor-pointer   w-full hover:border-black hover:outline-none p-2 rounded-lg border border-gray-200 text-gray-300 ">
+                                    <p>Date range</p>
+                                    <p class="absolute bg-white rounded-lg shadow-lg w-full h-96 p-2"></p>
 
-                                <!--                                <span class="label-text hidden absolute -top-2 left-12 bg-white px-2 text-sm text-black"></span>-->
-                            </p>
+                                </div>
+
+
+                            </div>
                             <p class="ml-24 w-8/12 text-base text-black opacity-30 right-text">
                                 Set a range of dates when you can accept meetings.
                             </p>
@@ -311,7 +313,6 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="w-full">
                         <p class="w-full   my-3 pl-2 font-semibold">Schedule for the availability</p>
                         <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
@@ -350,8 +351,6 @@
                         </div>
 
                     </div>
-
-
                     <div class="w-full mt-8 mb-4">
                         <p class="w-full   my-4 pl-2 font-semibold">Time before or after your events</p>
                         <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-start">
@@ -391,7 +390,6 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="w-full">
                         <p class="w-full   my-8 pl-2 font-semibold">Scheduling conditions</p>
                         <p class="w-full   my-1 pl-2 text-sm">Invitees can't schedule within...</p>
@@ -399,7 +397,8 @@
                             <div class="w-4/12 flex items-center justify-start">
                                 <p class="w-12  flex items-center justify-start relative mr-4">
 
-                                    <input type="text" placeholder="4" value="4" class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
+                                    <input type="text" placeholder="4" value="4"
+                                           class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
 
                                 </p>
                                 <p class="w-24  flex items-center justify-start relative">
@@ -420,7 +419,6 @@
                             </p>
                         </div>
                     </div>
-
                     <div class="w-full">
                         <p class="w-full  mt-8 mb-1 pl-2 text-sm">Maximum allowed events per day for this type of
                             event</p>
@@ -428,7 +426,8 @@
                             <div class="w-4/12 flex items-center justify-start">
                                 <p class="w-12   flex items-center justify-start relative mr-4">
 
-                                    <input type="text" placeholder="4" value="4" class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
+                                    <input type="text" placeholder="4" value="4"
+                                           class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
 
                                     <!--                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>-->
                                 </p>
@@ -440,11 +439,8 @@
                         </div>
                     </div>
 
-
                     <div class="w-full   p-2 flex  flex-nowrap flex items-center justify-end">
-                        <p class="w-4/12  flex items-center justify-end relative">
-
-                        </p>
+                        <p class="w-4/12  flex items-center justify-end relative"></p>
                         <p class="ml-24 w-8/12 text-base text-black ">
                             <button class=" mr-6 hover:text-red-500 close-create">Cancel</button>
                             <button class="button2 go-to-step-3">Continue</button>
