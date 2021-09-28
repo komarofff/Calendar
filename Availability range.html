@@ -327,76 +327,12 @@
                                 </div>
                                 <div class="px-4 w-full">
                                     <div class="w-full border-b border-gray-200 p-4 flex flex-col justify-start items-start ">
-                                        <div class="w-full flex justify-start items-center">
+                                        <div class="w-full flex justify-start items-center block-time">
                                             <div class="w-3/12 flex justify-start items-center">
                                                 <input type="checkbox" id="d1" class="disabled-check">
                                                 <p class="ml-2">Mon</p>
                                             </div>
                                             <div class="w-6/12 flex items-center justify-start">
-                                                <p class="w-24  flex items-center justify-start relative mr-4">
-
-                                                    <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
-                                                        <option value="" disabled selected>-</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="8">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                    </select>
-                                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
-                                                </p>
-                                                <p class="w-24  flex items-center justify-start relative mr-4">
-
-                                                    <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
-                                                        <option value="" disabled selected>-</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="8">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                    </select>
-                                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
-                                                </p>
-                                            </div>
-                                            <div class="w-3/12 flex justify-end"><img class="cursor-pointer"
-                                                                                      src="images/plus.svg" alt="">
-                                            </div>
-                                        </div>
-
-                                        <div class="w-full flex justify-start items-center mt-2">
-                                            <div class="w-3/12 flex justify-start items-center"></div>
-                                            <div class="w-6/12 flex items-center justify-start">
-                                                <p class="w-24  flex items-center justify-start relative mr-4">
-                                                    <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
-                                                        <option value="" disabled selected>-</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="8">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                    </select>
-                                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>                                                </p>
                                                 <p class="w-24  flex items-center justify-start relative mr-2">
                                                     <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
                                                         <option value="" disabled selected>-</option>
@@ -415,10 +351,32 @@
                                                     </select>
                                                     <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
                                                 </p>
-                                                <img src="images/trash.svg" alt="" class="cursor-pointer delete-additional-time">
+                                                <p class="">-</p>
+                                                <p class="w-24  flex items-center justify-start relative ml-2">
+                                                    <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
+                                                        <option value="" disabled selected>-</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="8">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                    </select>
+                                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
+                                                </p>
                                             </div>
-                                            <div class="w-3/12 flex justify-end"></div>
+                                            <div class="w-3/12 flex justify-end"><img
+                                                    class="cursor-pointer add-additional-time"
+                                                    src="images/plus.svg" alt="">
+                                            </div>
                                         </div>
+
 
                                     </div>
                                     <div class="w-full border-b border-gray-200 p-4">
@@ -641,6 +599,70 @@
 
 
 <script>
+    //add - delete additional time
+     adTime = `
+                                            <div class="w-3/12 flex justify-start items-center"></div>
+                                            <div class="w-6/12 flex items-center justify-start">
+                                                <p class="w-24  flex items-center justify-start relative mr-2">
+                                                    <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
+                                                        <option value="" disabled selected>-</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="8">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                    </select>
+                                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
+                                                </p>
+                                                <p class="">-</p>
+                                                <p class="w-24  flex items-center justify-start relative ml-2">
+                                                    <select class="bg-white form-input2 w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white text-black ">
+                                                        <option value="" disabled selected>-</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="8">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                    </select>
+                                                    <span class=" absolute -top-2 left-2 bg-white px-2 text-sm text-black">hours</span>
+                                                </p>
+                                                <img src="images/trash.svg" alt="" class="ml-1 cursor-pointer delete-additional-time">
+                                            </div>
+                                            <div class="w-3/12 flex justify-end"></div>
+    `
+    function createAdditionalBlock()    {
+        adTimeBlock = document.createElement('div')
+        adTimeBlock.classList.add('w-full', 'flex', 'justify-start', 'items-center', 'mt-2', 'additional-time')
+        adTimeBlock.innerHTML = adTime
+    }
+    const addTimeButtons = document.querySelectorAll('.add-additional-time')
+    addTimeButtons.forEach((el)=>{
+        el.addEventListener('click',(e)=>{
+            createAdditionalBlock()
+            el.parentNode.parentNode.after(adTimeBlock)
+            let closeBlocks = document.querySelectorAll('.delete-additional-time')
+            closeBlocks.forEach((closEl)=>{
+                closEl.addEventListener('click',(e)=>{
+                    closEl.parentNode.parentNode.remove()
+                })
+            })
+        })
+    })
+
     //open-close date-range popup
     document.querySelector('.form-input2-top').addEventListener('mouseover', (e) => {
         e.target.parentNode.parentNode.parentNode.querySelector('.right-text').classList.remove('opacity-30')
