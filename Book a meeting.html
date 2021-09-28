@@ -30,8 +30,22 @@
                         (it can be text blocks, options with
                         several answers, it might be mandatory/not mandatory questions)</p>
 
+                    <div class="w-full mt-4 pt-4 border-t border-gray-200 flex flex-col justify-start items-start">
+                        <p class="my-2 text-base font-semibold"> Former Time (Tima Grek)</p>
+                        <p class="my-2 flex items-center justify-start">
+                            <img src="images/red-time-zone.svg" alt="red">
+                            <span class="text-sm ml-2 font-semibold">11:00 - 11:45 July 26, 2021, Monday</span>
+                        </p>
+                        <p class="my-2 flex items-center justify-start">
+                            <img src="images/red-time.svg" alt="red">
+                            <span class="text-sm ml-2">Minsk Time </span>
+                        </p>
+                    </div>
+
+
                 </div>
-                <div id="first-center" class=" w-6/12 self-stretch flex flex-col justify-start items-start border-r border-gray-200 px-6">
+                <div id="first-center"
+                     class=" w-6/12 self-stretch flex flex-col justify-start items-start border-r border-gray-200 px-6">
                     <p class="text-base text-black font-semibold mb-4">Select a date</p>
                     <div class="text-base text-black  mb-4 flex justify-start items-center">
                         <img src="images/arrow-left-gray.svg" alt="arrow left">
@@ -87,12 +101,40 @@
                     </div>
 
                 </div>
-                <div id="second-center" class="hidden w-6/12 self-stretch flex flex-col justify-start items-start border-r border-gray-200 px-6">
+                <div id="second-center"
+                     class="hidden w-6/12 self-stretch flex flex-col justify-start items-start border-r border-gray-200 px-6">
                     <p class="text-base text-black font-semibold mb-4">Enter details</p>
-                    <div class="text-base text-black  mb-4 flex justify-start items-center">
-                        <img src="images/arrow-left-gray.svg" alt="arrow left">
-                        <span class="mx-6">July 2021</span>
-                        <img src="images/arrow-right.svg" alt="arrow right">
+                    <div class="w-6/12 text-base text-black  mb-4 flex flex-col justify-start items-start">
+                        <div class="my-2 w-full">
+                            <p class="my-2">0. <span class="ml-2 ">error</span></p>
+                            <p class="relative"><input type="text" placeholder="" value=""
+                                                       class=" bg-white w-full focus:border-red-500 focus:outline-none p-2 rounded-lg border border-red-500  focus:placeholder-white">
+                                <span class=" absolute -top-2 right-4 bg-white px-2 text-sm text-red-500">Required field</span>
+                            </p>
+
+                        </div>
+                        <div class="my-2 w-full">
+                            <p class="my-2">1. <span class="ml-2 ">Name*</span></p>
+                            <input type="text" placeholder="" value=""
+                                   class="bg-white w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white">
+                        </div>
+                        <div class="my-2 w-full">
+                            <p class="my-2">2. <span class="ml-2 ">Email*</span></p>
+                            <input type="text" placeholder="" value=""
+                                   class="bg-white w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white">
+                        </div>
+                        <div class="my-2 w-full">
+                            <p class="my-2">3. <span class="ml-2 ">Where did you study?*</span></p>
+                            <input type="text" placeholder="" value=""
+                                   class="bg-white w-full focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white">
+                        </div>
+
+
+                        <div class="my-4 w-full">
+                            <button class="button2 confirm-meeting"> Schedule a meeting</button>
+                        </div>
+
+
                     </div>
 
 
@@ -144,20 +186,24 @@
                         <p class="text-base text-black font-semibold mb-4">Date</p>
                         <div class="flex justify-start items-center">
                             <img src="images/date.svg" alt="date">
-                        <p class="text-sm ml-2">11:00 - 11:45 July 26, 2021, Monday</p>
+                            <p class="text-sm ml-2">11:00 - 11:45 July 26, 2021, Monday</p>
                         </div>
-                        
+
                     </div>
                     <div id="alert-block" class="hidden">
                         <p class="text-base text-black font-semibold mb-4">Select time</p>
-                            <img src="images/alert.svg" alt="alert">
-                            <p class="text-sm ml-2 my-4 text-gray-400">This time is no longer available. Please choose another one</p>
+                        <img src="images/alert.svg" alt="alert">
+                        <p class="text-sm ml-2 my-4 text-gray-400">This time is no longer available. Please choose
+                            another one</p>
 
 
                     </div>
                 </div>
 
             </div>
+        </div>
+        <div id="confirmed" class="hidden w-10/12 mx-auto my-8 bg-white rounded-xl p-8">
+            confirmed
         </div>
     </div>
 </div>
@@ -177,10 +223,15 @@
 
 
 <script>
+    //confirmed page open
+    document.querySelector('.confirm-meeting').addEventListener('click',()=>{
+        document.getElementById('book-a-meeting').classList.add('hidden')
+        document.getElementById('confirmed').classList.remove('hidden')
+    })
     // open select time block
     const datesArray = document.querySelectorAll('.calendar-booking-date')
-    datesArray.forEach((elem)=>{
-        elem.addEventListener('click',()=>{
+    datesArray.forEach((elem) => {
+        elem.addEventListener('click', () => {
             document.getElementById('first-block').classList.add('hidden')
             document.getElementById('second-block').classList.remove('hidden')
             confirmTime()
@@ -193,7 +244,7 @@
         buttons.forEach((el) => {
             el.addEventListener('click', () => {
                 let confirmTimeBlock = document.createElement('div')
-                confirmTimeBlock.classList.add('confirmed-time','w-full')
+                confirmTimeBlock.classList.add('confirmed-time', 'w-full')
                 let timeBlock = `
             <p class="w-full flex justify-between">
                             <button class="button3 px-24 my-2 mr-4">${el.innerHTML}</button>
@@ -204,8 +255,8 @@
                 el.remove()
 
                 let confirmArray = document.querySelectorAll('.confirm-button')
-                confirmArray.forEach((but)=>{
-                    but.addEventListener('click',()=>{
+                confirmArray.forEach((but) => {
+                    but.addEventListener('click', () => {
                         document.getElementById('second-block').classList.add('hidden')
                         document.getElementById('third-block').classList.remove('hidden')
                         document.getElementById('first-center').classList.add('hidden')
