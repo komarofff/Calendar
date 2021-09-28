@@ -987,12 +987,27 @@
         if(e.target.parentNode.parentNode.parentNode.querySelector('.right-text')){
             e.target.parentNode.parentNode.parentNode.querySelector('.right-text').classList.remove('opacity-30')
         }
+        e.target.parentNode.style.color = '#fff'
     })
     document.querySelector('.form-input2-top').addEventListener('mouseout', (e) => {
         if(e.target.parentNode.parentNode.parentNode.querySelector('.right-text')){
             e.target.parentNode.parentNode.parentNode.querySelector('.right-text').classList.add('opacity-30')
         }
+        e.target.parentNode.style.color = 'rgba(209,213,219,.6)'
     })
+    document.querySelector('.open-close-date-range').addEventListener('mouseover', (e) => {
+        console.log("55555")
+        if(e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.right-text')){
+            e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.right-text').classList.remove('opacity-30')
+        }
+    })
+    document.querySelector('.open-close-date-range').addEventListener('mouseout', (e) => {
+        if(e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.right-text')){
+            e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.right-text').classList.add('opacity-30')
+        }
+    })
+
+
 
     document.querySelector('.open-close-date-range').addEventListener('click', () => {
         document.querySelector('.popup-range').classList.toggle('hidden')
