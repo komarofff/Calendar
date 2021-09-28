@@ -219,13 +219,21 @@
 </div>
 
 
-<div class="black-window hidden fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60"></div>
-<div class="modal-window hidden fixed top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-2/4 w-80 h-72 bg-white shadow-lg p-8 text-lg text-black text-center flex flex-col justify-evenly items-center rounded-lg">
-    <p class="text-xl font-bold text-black">Are you sure you want to leave this page? </p>
-    <p class="text-base">The data will not be saved</p>
+<div class="black-window  fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60"></div>
+<div class="modal-window  fixed top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-2/4 w-96  bg-white shadow-lg p-8 text-lg text-black text-center flex flex-col justify-start items-start rounded-lg">
+    <p class="text-xl font-bold text-black mb-4">Cancel a meeting </p>
+    <p class="text-lg text-black">Client's meetings</p>
+    <p class="text-sm text-gray-400 mb-4">Tima Grek</p>
+    <p class="flex justify-start items-center mb-6"><img src="images/date.svg" alt=""><span class="ml-2 text-sm font-semibold">11:00 - 11:45 July 26, 2021, Monday</span></p>
+    <p class="text-sm text-gray-400 text-left mb-4">
+        Please confirm that you would like to cancel this meeting. A cancellation email will also go out the invitee.
+    </p>
+    <p class="w-full mb-6">
+        <textarea  class="bg-white w-full h-24 focus:border-black focus:outline-none p-2 rounded-lg border border-gray-200  focus:placeholder-white"></textarea>
+    </p>
     <p class="w-full  flex items-center justify-between relative text-sm">
-        <button class=" mr-6 hover:text-red-500 close-create-modal">Yes, leave</button>
-        <button class="button2 go-back">No, go back</button>
+        <button class=" button4 mr-4">Yes, leave</button>
+        <button class="button2 go-back">Yes, cancel</button>
     </p>
 </div>
 
