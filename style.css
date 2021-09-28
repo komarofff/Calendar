@@ -704,6 +704,7 @@ option:disabled{
     color: rgb(231, 140, 92);
 }
 #calendar2 tbody td.today {
+   
     border-radius: 50%;
     background: #0A246A;
     color:#fff;
