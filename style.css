@@ -54,6 +54,27 @@ html {
     border: none;
 }
 
+.button22:hover {
+    background: #295D7B;
+    box-shadow: 0px 4px 10px rgba(42, 62, 79, 0.4);
+    border-radius: 100px;
+}
+
+.button22 {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: #fff;
+    background: #2A3E4F;
+    border-radius: 100px;
+    padding: 9px 32px;
+    outline: none;
+    border: none;
+}
+
 .button2:hover {
     background: #295D7B;
     box-shadow: 0px 4px 10px rgba(42, 62, 79, 0.4);
@@ -127,6 +148,49 @@ html {
     border: 1px solid #EE795C;
 }
 .button4_disabled{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    background: #fff;
+    padding: 9px 32px;
+    color: #C5CBD0;
+    border: 1px solid #C5CBD0;
+    border-radius: 100px;
+    cursor: default;
+}
+
+.button44{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: #2A3E4F;
+    padding-top: 9px ;
+    padding-bottom:9px;
+    background: #fff;
+    border: 1px solid #2A3E4F;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+.button44:hover{
+    color: #BE563D;
+    border: 1px solid #BE563D;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(190, 86, 61, 0.2);
+    border-radius: 100px;
+}
+.button44:active{
+    background: #EE795C;
+    color: #fff;
+    box-shadow: none;
+    border: 1px solid #EE795C;
+}
+.button44_disabled{
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
