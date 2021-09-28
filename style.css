@@ -719,6 +719,13 @@ option:disabled{
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
+
+/* BOOK A MEETING PAGE */
+.book-a-meeting{
+    min-height: 75vh;
+}
+
+
 @media (max-width: 1500px) {
     .time {
         left: -34vw;

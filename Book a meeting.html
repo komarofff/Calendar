@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Book a meeting</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="app-block  box-border">
+    <div class="w-12/12 bg-white h-24"> header</div>
+    <div class="w-full bg-gray-2000 min-h-screen p-4 lg:p-6 xl:p-10">
+        <div id="book-a-meeting" class="w-10/12 mx-auto my-8 bg-white rounded-xl ">
+            <div class="w-full book-a-meeting p-12 flex ">
+                <div class="w-3/12  self-stretch flex flex-col justify-start items-start border-r border-gray-200 ">1
+                </div>
+                <div class="w-6/12 self-stretch flex flex-col justify-start items-start border-r border-gray-200">2
+                </div>
+                <div class="w-3/12 self-stretch flex flex-col justify-start items-start">3</div>
 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="black-window hidden fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-60"></div>
+<div class="modal-window hidden fixed top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-2/4 w-80 h-72 bg-white shadow-lg p-8 text-lg text-black text-center flex flex-col justify-evenly items-center rounded-lg">
+    <p class="text-xl font-bold text-black">Are you sure you want to leave this page? </p>
+    <p class="text-base">The data will not be saved</p>
+    <p class="w-full  flex items-center justify-between relative text-sm">
+        <button class=" mr-6 hover:text-red-500 close-create-modal">Yes, leave</button>
+        <button class="button2 go-back">No, go back</button>
+    </p>
+</div>
+
+</div>
+
+
+<script>
+
+</script>
 </body>
 </html>
