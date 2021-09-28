@@ -613,6 +613,26 @@ html {
 option:disabled{
     color: rgba(229, 231, 235, 0.6)
 }
+
+.block-time-disabled p, .block-time-disabled span,.block-time-disabled select {
+    pointer-events: none;
+    color: #C5CBD0 !important;
+}
+.block-time-disabled .add-additional-time{
+    -webkit-filter: opacity(0.4);
+    -moz-filter: opacity(0.4);
+    -ms-filter: opacity(0.4);
+    -o-filter: opacity(0.4);
+    filter: opacity(0.4);
+    pointer-events: none;
+}
+.block-time select{
+    border: 1px solid #000;
+}
+.disabled-check{
+    cursor: pointer;
+    pointer-events: painted;
+}
 .copy-to-buffer{
     position: relative;
 }
