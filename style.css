@@ -708,6 +708,19 @@ option:disabled{
     background: #0A246A;
     color:#fff;
 }
+.calendar-booking-date{
+    cursor:pointer;
+}
+.selToday{
+    width:20px;
+    height:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #0A246A;
+    color:#fff;
+}
 .selectedDate{
     background: darkred;
     color: #fff !important;
@@ -724,7 +737,9 @@ option:disabled{
 .book-a-meeting{
     min-height: 75vh;
 }
-
+.center-calendar{
+    min-width: 100%;
+}
 
 @media (max-width: 1500px) {
     .time {
