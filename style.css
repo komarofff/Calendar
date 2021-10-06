@@ -771,7 +771,8 @@ option:disabled{
 
     border-radius: 50%;
     background: #0A246A;
-    color:#fff;
+    color: #fff;
+    width: 36px;
 }
 .calendar-booking-date{
     cursor:pointer;
